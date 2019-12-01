@@ -1,0 +1,10 @@
+<div style="background-color: #3F51B5;">
+        <mat-grid-list cols=9>
+                <mat-grid-tile
+                *ngFor="let tile of tiles"
+                [colspan]="tile.cols"
+                [rowspan]="tile.rows">
+                        <span class="footerNavigationLink" routerLink={{tile.routerLink}}>{{tile.text}}</span>
+                </mat-grid-tile>
+        </mat-grid-list>
+</div>

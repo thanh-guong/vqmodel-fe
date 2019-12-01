@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+    <span class="vqmodelHeader" routerLink={{this.homepagePath}}>VQModel.com</span>
+    <span></span>
+    <span class="toolbarButtonsContainer">
+        <button mat-button [matMenuTriggerFor]="productsMenu">Products</button>
+        <mat-menu #productsMenu="matMenu">
+          <button routerLink="aircrafts" mat-menu-item>Aircrafts</button>
+          <button routerLink="accessories" mat-menu-item>Accessories</button>
+        </mat-menu>
+        <button mat-button [matMenuTriggerFor]="trustAnchorsMenu">Trust Anchors</button>
+        <mat-menu #trustAnchorsMenu="matMenu">
+            <button routerLink="product-reviews" mat-menu-item>Product reviews</button>
+            <button routerLink="distributors" mat-menu-item>Distributors</button>
+          </mat-menu>
+        <button mat-button [matMenuTriggerFor]="aboutUsMenu">About us</button>
+        <mat-menu #aboutUsMenu="matMenu">
+            <button routerLink="showroom" mat-menu-item>Show room</button>
+            <button routerLink="factory" mat-menu-item>Factory</button>
+        </mat-menu>
+        <button mat-button [matMenuTriggerFor]="support">Support</button>
+        <mat-menu #support="matMenu">
+            <button routerLink="email-us" mat-menu-item>Email us</button>
+            <button routerLink="downloads" mat-menu-item>Downloads</button>
+        </mat-menu>
+    </span>
+  </mat-toolbar>
