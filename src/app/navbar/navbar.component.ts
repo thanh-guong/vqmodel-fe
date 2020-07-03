@@ -7,9 +7,44 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  public aircrafts =
+  {
+    name: 'Aircrafts',
+    icon: 'airplanemode_active'
+  };
 
-  ngOnInit(): void {
+  public factory =
+  {
+    name: 'Factory',
+    icon: 'construction'
+  };
+
+  public reviews =
+  {
+    name: 'Reviews',
+    icon: 'book_online'
+  };
+
+  public distributors =
+  {
+    name: 'Distributors',
+    icon: 'send'
+  };
+
+  public contactUs =
+  {
+    name: 'Contact us',
+    icon: 'email'
+  };
+
+  constructor()
+  {
+
+  }
+
+  ngOnInit(): void
+  {
+
   }
 
 }
