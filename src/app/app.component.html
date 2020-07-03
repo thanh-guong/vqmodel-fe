@@ -1,2 +1,66 @@
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
+<div style="height: 100vh;">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>VQModel</span>
+      <span class="example-spacer"></span>
+      <div fxShow="true" fxHide.lt-md="true">
+        <!-- The following menu items will be hidden on both SM and XS screen sizes -->
+        <a href="" routerLink={{aircraftRoute}} mat-button>
+          <mat-icon>{{aircrafts.icon}}</mat-icon>
+          {{aircrafts.name}}
+        </a>
+        <a href="" mat-button>
+          <mat-icon>{{factory.icon}}</mat-icon>
+          {{factory.name}}
+        </a>
+        <a href="" mat-button>
+          <mat-icon>{{reviews.icon}}</mat-icon>
+          {{reviews.name}}
+        </a>
+        <a href="" mat-button>
+          <mat-icon>{{distributors.icon}}</mat-icon>
+          {{distributors.name}}
+        </a>
+        <a href="" mat-button>
+          <mat-icon>{{contactUs.icon}}</mat-icon>
+          {{contactUs.name}}
+        </a>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav-container fxFlexFill>
+    <mat-sidenav #sidenav>
+      <mat-nav-list>
+        <a href="" mat-list-item>
+          <mat-icon>{{aircrafts.icon}}</mat-icon>
+          {{aircrafts.name}}
+        </a>
+        <a href="" mat-list-item>
+          <mat-icon>{{factory.icon}}</mat-icon>
+          {{factory.name}}
+        </a>
+        <a href="" mat-list-item>
+          <mat-icon>{{reviews.icon}}</mat-icon>
+          {{reviews.name}}
+        </a>
+        <a href="" mat-list-item>
+          <mat-icon>{{distributors.icon}}</mat-icon>
+          {{distributors.name}}
+        </a>
+        <a href="" mat-list-item>
+          <mat-icon>{{contactUs.icon}}</mat-icon>
+          {{contactUs.name}}
+        </a>
+        <a (click)="sidenav.toggle()" mat-list-item>
+          <mat-icon>close</mat-icon> Close
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <router-outlet fxFlexFill></router-outlet>
+  </mat-sidenav-container>
+
+</div>
