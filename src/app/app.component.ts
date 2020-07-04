@@ -8,12 +8,12 @@ import { environment } from '../environments/environment';
 })
 export class AppComponent {
   title = 'vqmodel';
-  aircraftRoute = environment.aircraftRoute;
 
   public aircrafts =
     {
       name: 'Aircrafts',
-      icon: 'airplanemode_active'
+      icon: 'airplanemode_active',
+      route: environment.aircraftRoute,
     };
 
   public factory =
