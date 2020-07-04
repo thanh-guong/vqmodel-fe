@@ -13,11 +13,15 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { AircraftsComponent } from './aircrafts/aircrafts.component';
+import {MatCardModule} from '@angular/material/card';
+import { AircraftCardComponent } from './aircraft-card/aircraft-card.component';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AircraftsComponent
+    AircraftsComponent,
+    AircraftCardComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +33,8 @@ import { AircraftsComponent } from './aircrafts/aircrafts.component';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    MatCardModule,
+    MatGridListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
