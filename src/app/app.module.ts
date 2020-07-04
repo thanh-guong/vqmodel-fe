@@ -22,6 +22,11 @@ import { DistributorsComponent } from './distributors/distributors.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableModule} from '@angular/material/table';
 import { ToolbarButtonComponent } from './toolbar-button/toolbar-button.component';
+import { FactoryComponent } from './factory/factory.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import {MatInputModule} from '@angular/material/input';
+import {ReactiveFormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,6 +37,8 @@ import { ToolbarButtonComponent } from './toolbar-button/toolbar-button.componen
     ReviewCardComponent,
     DistributorsComponent,
     ToolbarButtonComponent,
+    FactoryComponent,
+    ContactUsComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +54,9 @@ import { ToolbarButtonComponent } from './toolbar-button/toolbar-button.componen
     MatGridListModule,
     MatPaginatorModule,
     MatTableModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
