@@ -21,6 +21,7 @@ import { ReviewCardComponent } from './review-card/review-card.component';
 import { DistributorsComponent } from './distributors/distributors.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableModule} from '@angular/material/table';
+import { ToolbarButtonComponent } from './toolbar-button/toolbar-button.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {MatTableModule} from '@angular/material/table';
     AircraftCardComponent,
     ReviewsComponent,
     ReviewCardComponent,
-    DistributorsComponent
+    DistributorsComponent,
+    ToolbarButtonComponent,
   ],
   imports: [
     BrowserModule,

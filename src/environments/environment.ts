@@ -5,8 +5,10 @@
 export const environment = {
   production: false,
   aircraftRoute: 'aircrafts',
+  factoryRoute: 'factory',
   reviewsRoute: 'reviews',
   distributorsRoute: 'distributors',
+  contactUsRoute: 'contact-us',
 };
 
 /*

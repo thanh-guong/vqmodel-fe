@@ -19,7 +19,8 @@ export class AppComponent {
   public factory =
     {
       name: 'Factory',
-      icon: 'construction'
+      icon: 'construction',
+      route: environment.factoryRoute,
     };
 
   public reviews =
@@ -39,6 +40,7 @@ export class AppComponent {
   public contactUs =
     {
       name: 'Contact us',
-      icon: 'email'
+      icon: 'email',
+      route: environment.contactUsRoute,
     };
 }
