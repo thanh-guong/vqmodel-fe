@@ -32,7 +32,8 @@ export class AppComponent {
   public distributors =
     {
       name: 'Distributors',
-      icon: 'send'
+      icon: 'send',
+      route: environment.distributorsRoute,
     };
 
   public contactUs =

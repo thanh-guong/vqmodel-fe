@@ -6,6 +6,7 @@ export const environment = {
   production: false,
   aircraftRoute: 'aircrafts',
   reviewsRoute: 'reviews',
+  distributorsRoute: 'distributors',
 };
 
 /*

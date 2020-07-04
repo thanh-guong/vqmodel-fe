@@ -22,7 +22,7 @@
           <mat-icon>{{reviews.icon}}</mat-icon>
           {{reviews.name}}
         </a>
-        <a mat-button>
+        <a routerLink={{distributors.route}} mat-button>
           <mat-icon>{{distributors.icon}}</mat-icon>
           {{distributors.name}}
         </a>
@@ -45,11 +45,11 @@
           <mat-icon>{{factory.icon}}</mat-icon>
           {{factory.name}}
         </a>
-        <a (click)="sidenav.toggle()" mat-list-item>
+        <a (click)="sidenav.toggle()" routerLink={{reviews.route}} mat-list-item>
           <mat-icon>{{reviews.icon}}</mat-icon>
           {{reviews.name}}
         </a>
-        <a (click)="sidenav.toggle()" mat-list-item>
+        <a (click)="sidenav.toggle()" routerLink={{distributors.route}} mat-list-item>
           <mat-icon>{{distributors.icon}}</mat-icon>
           {{distributors.name}}
         </a>

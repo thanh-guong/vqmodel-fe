@@ -18,6 +18,9 @@ import { AircraftCardComponent } from './aircraft-card/aircraft-card.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { ReviewCardComponent } from './review-card/review-card.component';
+import { DistributorsComponent } from './distributors/distributors.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,8 @@ import { ReviewCardComponent } from './review-card/review-card.component';
     AircraftsComponent,
     AircraftCardComponent,
     ReviewsComponent,
-    ReviewCardComponent
+    ReviewCardComponent,
+    DistributorsComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +43,8 @@ import { ReviewCardComponent } from './review-card/review-card.component';
     MatListModule,
     MatCardModule,
     MatGridListModule,
+    MatPaginatorModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
