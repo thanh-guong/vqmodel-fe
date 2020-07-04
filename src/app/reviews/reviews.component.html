@@ -1,0 +1,11 @@
+<div
+  fxLayout="row wrap"
+  fxLayout.lt-sm="column"
+  fxLayoutAlign="flex-start">
+
+  <ng-container *ngFor="let _ of [1,2,3,4,5,6]">
+    <app-review-card fxFlex="0 1 calc(33.3% - 16px)" fxFlex.lt-md="0 1 calc(50% - 16px)" fxFlex.lt-sm="100%">
+    </app-review-card>
+  </ng-container>
+
+</div>

@@ -16,12 +16,16 @@ import { AircraftsComponent } from './aircrafts/aircrafts.component';
 import {MatCardModule} from '@angular/material/card';
 import { AircraftCardComponent } from './aircraft-card/aircraft-card.component';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { ReviewsComponent } from './reviews/reviews.component';
+import { ReviewCardComponent } from './review-card/review-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AircraftsComponent,
-    AircraftCardComponent
+    AircraftCardComponent,
+    ReviewsComponent,
+    ReviewCardComponent
   ],
   imports: [
     BrowserModule,

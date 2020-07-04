@@ -25,7 +25,8 @@ export class AppComponent {
   public reviews =
     {
       name: 'Reviews',
-      icon: 'book_online'
+      icon: 'book_online',
+      route: environment.reviewsRoute,
     };
 
   public distributors =
