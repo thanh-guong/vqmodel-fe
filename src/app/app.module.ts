@@ -27,6 +27,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import {MatInputModule} from '@angular/material/input';
 import {ReactiveFormsModule} from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { FormsModule } from '@angular/forms';
     ToolbarButtonComponent,
     FactoryComponent,
     ContactUsComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

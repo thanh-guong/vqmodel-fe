@@ -51,6 +51,7 @@
 
     <mat-sidenav-content>
       <router-outlet fxFlexFill></router-outlet>
+      <app-home *ngIf="router.url === '/'"></app-home>
     </mat-sidenav-content>
 
   </mat-sidenav-container>
