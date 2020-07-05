@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-aircraft-card',
@@ -6,6 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./aircraft-card.component.css']
 })
 export class AircraftCardComponent implements OnInit {
+
+  @Input()
+  public name: string;
+
+  @Input()
+  public image: string;
 
   constructor() { }
 

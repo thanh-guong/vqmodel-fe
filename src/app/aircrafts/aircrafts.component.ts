@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AircraftClass, AircraftsService} from './service/aircrafts.service';
 
 @Component({
   selector: 'app-aircrafts',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AircraftsComponent implements OnInit {
 
-  constructor() { }
+  aircrafts: AircraftClass[];
 
-  ngOnInit(): void {
+  constructor(private aircraftsService: AircraftsService)
+  {
+
+  }
+
+  ngOnInit(): void
+  {
+    this.aircrafts = this.aircraftsService.getAircraftClasses();
   }
 
 }
