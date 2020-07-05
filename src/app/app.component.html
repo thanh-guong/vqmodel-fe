@@ -1,4 +1,4 @@
-<div>
+<div class="container">
   <mat-toolbar color="primary">
     <mat-toolbar-row>
       <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
@@ -19,14 +19,14 @@
     </mat-toolbar-row>
   </mat-toolbar>
 
-  <mat-sidenav-container fxFlexFill>
-    <mat-sidenav #sidenav>
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav mode="push" #sidenav>
       <mat-nav-list>
         <a (click)="sidenav.toggle()" routerLink={{aircrafts.route}} mat-list-item>
           <mat-icon>{{aircrafts.icon}}</mat-icon>
           {{aircrafts.name}}
         </a>
-        <a (click)="sidenav.toggle()" mat-list-item>
+        <a (click)="sidenav.toggle()" routerLink={{factory.route}} mat-list-item>
           <mat-icon>{{factory.icon}}</mat-icon>
           {{factory.name}}
         </a>
@@ -38,7 +38,7 @@
           <mat-icon>{{distributors.icon}}</mat-icon>
           {{distributors.name}}
         </a>
-        <a (click)="sidenav.toggle()" mat-list-item>
+        <a (click)="sidenav.toggle()" routerLink={{contactUs.route}} mat-list-item>
           <mat-icon>{{contactUs.icon}}</mat-icon>
           {{contactUs.name}}
         </a>
@@ -48,8 +48,14 @@
         </a>
       </mat-nav-list>
     </mat-sidenav>
-    <!-- Content goes here -->
-    <router-outlet fxFlexFill></router-outlet>
+
+    <mat-sidenav-content>
+      <router-outlet fxFlexFill></router-outlet>
+    </mat-sidenav-content>
+
   </mat-sidenav-container>
 
 </div>
+
+
+
