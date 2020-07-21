@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {environment} from '../../../environments/environment';
 
 export interface Distributor
 {
@@ -139,6 +140,16 @@ export class DistributorsService {
   }
 
   public getDistributors(): Distributor[]
+  {
+    if (!environment.production && environment.solitary_mode)
+    {
+      return SOLITARY_TEST_DISTRIBUTOR;
+    }
+
+    return this.remoteGetDistributors();
+  }
+
+  public remoteGetDistributors(): Distributor[]
   {
     return SOLITARY_TEST_DISTRIBUTOR;
   }
