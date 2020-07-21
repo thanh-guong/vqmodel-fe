@@ -19,6 +19,16 @@ const SOLITARY_TEST_AIRCRAFT_CLASS: AircraftClass[] = [
   { name: 'Small but squared',            image: 'https://via.placeholder.com/50x50', },
 ];
 
+export interface AircraftModel
+{
+  name: string;
+  image: string;
+}
+
+const SOLITARY_TEST_AIRCRAFT_MODELS: AircraftModel[] = [
+  {name: '', image: '', },
+];
+
 @Injectable({
   providedIn: 'root'
 })
@@ -29,6 +39,9 @@ export class AircraftService
 
   }
 
+  /***
+   * Aicraft classes
+   */
   public getAircraftClasses(): AircraftClass[]
   {
     if (!environment.production && environment.solitary_mode)
@@ -43,5 +56,24 @@ export class AircraftService
   {
     return SOLITARY_TEST_AIRCRAFT_CLASS;
   }
+
+  /***
+   * Aircraft models
+   */
+  public getAircraftModels(): AircraftClass[]
+  {
+    if (!environment.production && environment.solitary_mode)
+    {
+      return SOLITARY_TEST_AIRCRAFT_MODELS;
+    }
+
+    return this.getRemoteAircraftModels();
+  }
+
+  public getRemoteAircraftModels(): AircraftClass[]
+  {
+    return SOLITARY_TEST_AIRCRAFT_MODELS;
+  }
+
 
 }

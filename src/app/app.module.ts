@@ -29,6 +29,8 @@ import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AircraftClassesComponent } from './aircraft-classes/aircraft-classes.component';
 import { AircraftClassCardComponent } from './aircraft-class-card/aircraft-class-card.component';
+import { AircraftModelsComponent } from './aircraft-models/aircraft-models.component';
+import { AircraftModelCardComponent } from './aircraft-model-card/aircraft-model-card.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { AircraftClassCardComponent } from './aircraft-class-card/aircraft-class
     HomeComponent,
     AircraftClassesComponent,
     AircraftClassCardComponent,
+    AircraftModelsComponent,
+    AircraftModelCardComponent,
   ],
   imports: [
     BrowserModule,
