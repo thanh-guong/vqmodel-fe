@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { environment } from '../../../environments/environment';
 
 export interface AircraftClass
 {
@@ -7,13 +8,15 @@ export interface AircraftClass
 }
 
 const SOLITARY_TEST_AIRCRAFT_CLASS: AircraftClass[] = [
-  { name: '20 size EP', image: 'http://www.vqmodel.com/NewVQModel_20sizeEP/images/DO27/Do-27_20size_EP_x_index.jpg', },
-  { name: '25/35 size EP/GP', image: 'http://www.vqmodel.com/NewVQModel_25-32size-EP-GP/images/Index/VQA157US_index.jpg', },
-  { name: '20cc - 30cc size EP/GP', image: 'http://www.vqmodel.com/NewVQModel_20-30cc/images/Index/Super_Cub_x_index.jpg', },
-  { name: '46 size EP/GP', image: 'http://www.vqmodel.com/NewVQModel_46size/images/Index/Kawasaki.jpg', },
-  { name: '60-90 size EP/GP', image: 'http://www.vqmodel.com/NewVQModel_60-90size/images/Index/Ki-61_x_index.jpg', },
-  { name: 'EDF 70mm size', image: 'http://www.vqmodel.com/NewVQModel_EDF_70mm_size/images/Sonex_EDF_70mm/Sonex_EDF_70mm_Red_x_page.jpg', },
-  { name: 'Glider', image: 'http://www.vqmodel.com/NewVQModel_Glider/images/Index/Swallow_x_index.jpg', },
+  { name: 'Longest rather than largest',  image: 'https://via.placeholder.com/150x300', },
+  { name: 'Largest rather than longest',  image: 'https://via.placeholder.com/300x150', },
+  { name: 'Squared',                      image: 'https://via.placeholder.com/150x150', },
+  { name: 'Huge but squared',             image: 'https://via.placeholder.com/2000x2000', },
+  { name: 'Huge but squared',             image: 'https://via.placeholder.com/2000x2000', },
+  { name: 'Huge but squared',             image: 'https://via.placeholder.com/2000x2000', },
+  { name: 'Small but squared',            image: 'https://via.placeholder.com/50x50', },
+  { name: 'Small but squared',            image: 'https://via.placeholder.com/50x50', },
+  { name: 'Small but squared',            image: 'https://via.placeholder.com/50x50', },
 ];
 
 @Injectable({
@@ -27,6 +30,16 @@ export class AircraftsService
   }
 
   public getAircraftClasses(): AircraftClass[]
+  {
+    if (!environment.production && environment.solitary_mode)
+    {
+      return SOLITARY_TEST_AIRCRAFT_CLASS;
+    }
+
+    return this.getRemoteAircraftClasses();
+  }
+
+  public getRemoteAircraftClasses(): AircraftClass[]
   {
     return SOLITARY_TEST_AIRCRAFT_CLASS;
   }

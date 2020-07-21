@@ -9,6 +9,7 @@ export const environment = {
   reviewsRoute: 'reviews',
   distributorsRoute: 'distributors',
   contactUsRoute: 'contact-us',
+  solitary_mode: true,
 };
 
 /*
