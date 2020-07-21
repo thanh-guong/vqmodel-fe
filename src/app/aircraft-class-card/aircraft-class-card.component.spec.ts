@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AircraftCardComponent } from './aircraft-card.component';
+import { AircraftClassCardComponent } from './aircraft-class-card.component';
 
-describe('AircraftCardComponent', () => {
-  let component: AircraftCardComponent;
-  let fixture: ComponentFixture<AircraftCardComponent>;
+describe('AircraftClassCardComponent', () => {
+  let component: AircraftClassCardComponent;
+  let fixture: ComponentFixture<AircraftClassCardComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AircraftCardComponent ]
+      declarations: [ AircraftClassCardComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AircraftCardComponent);
+    fixture = TestBed.createComponent(AircraftClassCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

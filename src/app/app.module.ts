@@ -13,7 +13,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
-import { AircraftCardComponent } from './aircraft-card/aircraft-card.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { ReviewCardComponent } from './review-card/review-card.component';
@@ -29,11 +28,11 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AircraftClassesComponent } from './aircraft-classes/aircraft-classes.component';
+import { AircraftClassCardComponent } from './aircraft-class-card/aircraft-class-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AircraftCardComponent,
     ReviewsComponent,
     ReviewCardComponent,
     DistributorsComponent,
@@ -42,6 +41,7 @@ import { AircraftClassesComponent } from './aircraft-classes/aircraft-classes.co
     ContactUsComponent,
     HomeComponent,
     AircraftClassesComponent,
+    AircraftClassCardComponent,
   ],
   imports: [
     BrowserModule,
