@@ -22,7 +22,7 @@ const SOLITARY_TEST_AIRCRAFT_CLASS: AircraftClass[] = [
 @Injectable({
   providedIn: 'root'
 })
-export class AircraftsService
+export class AircraftService
 {
   constructor()
   {

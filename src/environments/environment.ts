@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  aircraftRoute: 'aircrafts',
+  aircraftRoute: 'aircraft-classes',
   factoryRoute: 'factory',
   reviewsRoute: 'reviews',
   distributorsRoute: 'distributors',

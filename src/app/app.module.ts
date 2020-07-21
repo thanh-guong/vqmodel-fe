@@ -12,7 +12,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { AircraftsComponent } from './aircrafts/aircrafts.component';
 import {MatCardModule} from '@angular/material/card';
 import { AircraftCardComponent } from './aircraft-card/aircraft-card.component';
 import {MatGridListModule} from '@angular/material/grid-list';
@@ -29,11 +28,11 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AircraftClassesComponent } from './aircraft-classes/aircraft-classes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AircraftsComponent,
     AircraftCardComponent,
     ReviewsComponent,
     ReviewCardComponent,
@@ -42,6 +41,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FactoryComponent,
     ContactUsComponent,
     HomeComponent,
+    AircraftClassesComponent,
   ],
   imports: [
     BrowserModule,
