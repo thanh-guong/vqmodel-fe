@@ -1,0 +1,2 @@
+SET CONTAINER_TAG=vqmodel-fe
+SET PORT=4200
