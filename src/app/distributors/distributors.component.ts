@@ -9,11 +9,9 @@ import {Distributor, DistributorsService} from './service/distributors.service';
   styleUrls: ['./distributors.component.css']
 })
 export class DistributorsComponent implements OnInit {
-  displayedColumns: string[] = ['country', 'address', 'phone', 'web'];  // This has to match with the Distributor interface
+  displayedColumns: string[] = ['name', 'country', 'phone', ];  // This has to match with the Distributor interface
   distributors: Distributor[];
   dataSource: MatTableDataSource<Distributor>;
-
-  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
   constructor(private distributorsService: DistributorsService)
   {
@@ -23,6 +21,5 @@ export class DistributorsComponent implements OnInit {
 
   ngOnInit(): void
   {
-    this.dataSource.paginator = this.paginator;
   }
 }
