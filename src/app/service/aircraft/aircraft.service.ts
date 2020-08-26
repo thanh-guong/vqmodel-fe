@@ -49,9 +49,9 @@ export class AircraftService extends SuperService
     return null;
   }
 
-  public getAllAircraftClasses(): Observable<AircraftClass>
+  public getAllAircraftClasses(): Observable<AircraftClass[]>
   {
-    return this.http.get<AircraftClass>(this.generateRemoteAddressForApi(environment.aircraftRouteRemote));
+    return this.http.get<AircraftClass[]>(this.generateRemoteAddressForApi(environment.aircraftRouteRemote));
   }
 
   /***

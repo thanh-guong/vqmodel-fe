@@ -8,7 +8,7 @@ import {AircraftClass, AircraftService} from '../service/aircraft/aircraft.servi
 })
 export class AircraftClassesComponent implements OnInit {
 
-  aircraftClasses: AircraftClass;
+  aircraftClasses: AircraftClass[];
 
   constructor(private aircraftService: AircraftService)
   {
@@ -17,7 +17,6 @@ export class AircraftClassesComponent implements OnInit {
 
   ngOnInit(): void
   {
-    // tslint:disable-next-line:max-line-length
     this.aircraftService.getAllAircraftClasses().subscribe(
       data => {
       this.aircraftClasses = data;
