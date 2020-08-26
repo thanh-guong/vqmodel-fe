@@ -9,6 +9,12 @@ export const environment = {
   reviewsRoute: 'reviews',
   distributorsRoute: 'distributors',
   contactUsRoute: 'contact-us',
+  remoteHost: 'localhost',
+  remotePort: '8000',
+  remoteApiPrefix: 'api',
+  aircraftRouteRemote: 'aircraftclasses',
+  reviewsRouteRemote: 'reviews',
+  distributorsRouteRemote: 'distributors',
   solitary_mode: true,
 };
 

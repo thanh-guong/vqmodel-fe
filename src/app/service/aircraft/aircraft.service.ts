@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
+import {SuperService} from '../super.service';
+import {Observable} from 'rxjs';
 
 export interface AircraftClass
 {
@@ -32,13 +34,8 @@ const SOLITARY_TEST_AIRCRAFT_MODELS: AircraftModel[] = [
 @Injectable({
   providedIn: 'root'
 })
-export class AircraftService
+export class AircraftService extends SuperService
 {
-  constructor()
-  {
-
-  }
-
   /***
    * Aicraft classes
    */
@@ -49,12 +46,12 @@ export class AircraftService
       return SOLITARY_TEST_AIRCRAFT_CLASS;
     }
 
-    return this.getRemoteAircraftClasses();
+    return null;
   }
 
-  public getRemoteAircraftClasses(): AircraftClass[]
+  public getAllAircraftClasses(): Observable<AircraftClass>
   {
-    return SOLITARY_TEST_AIRCRAFT_CLASS;
+    return this.http.get<AircraftClass>(this.generateRemoteAddressForApi(environment.aircraftRouteRemote));
   }
 
   /***
