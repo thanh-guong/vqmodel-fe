@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { AircraftModel, AircraftService} from '../service/aircraft/aircraft.service';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-aircraft-models',
@@ -8,16 +9,27 @@ import { AircraftModel, AircraftService} from '../service/aircraft/aircraft.serv
 })
 export class AircraftModelsComponent implements OnInit {
 
+  aircraftClassId: number;
+
   aircraftModels: AircraftModel[];
 
-  constructor(private aircraftService: AircraftService)
+  constructor(private aircraftService: AircraftService, private activatedRoute: ActivatedRoute)
   {
 
   }
 
   ngOnInit(): void
   {
-    this.aircraftModels = this.aircraftService.getAircraftModels();
+    this.activatedRoute.paramMap.subscribe(params => {
+      this.aircraftClassId = +params.get('aircraftClassId');
+    });
+
+    this.aircraftService.getAircraftModelsByClass(this.aircraftClassId).subscribe(
+      data => {
+        this.aircraftModels = data;
+      },
+    error => {console.log(error); }
+    );
   }
 
 }

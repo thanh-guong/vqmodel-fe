@@ -4,8 +4,11 @@
   fxLayoutAlign="flex-start">
 
   <ng-container *ngFor="let a of aircraftClasses">
-    <app-aircraft-class-card [name]="a.name" [image]="a.image" fxFlex="0 1 calc(33.3%" fxFlex.lt-md="0 1 calc(50%)" fxFlex.lt-sm="100%">
-    </app-aircraft-class-card>
+      <app-aircraft-class-card [name]="a.name" [image]="a.image" [id]="a.id"
+                               fxFlex="0 1 calc(33.3%"
+                               fxFlex.lt-md="0 1 calc(50%)"
+                               fxFlex.lt-sm="100%">
+      </app-aircraft-class-card>
   </ng-container>
 
 </div>

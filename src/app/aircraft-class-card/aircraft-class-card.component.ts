@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {environment} from '../../environments/environment';
 
 @Component({
   selector: 'app-aircraft-class-card',
@@ -13,9 +14,15 @@ export class AircraftClassCardComponent implements OnInit {
   @Input()
   public image: string;
 
+  @Input()
+  public id: number;
+
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
+  getAircraftModelPath(): string
+  {
+    return '/' + environment.aircraftModelsRoute + '/' + this.id;
+  }
 }

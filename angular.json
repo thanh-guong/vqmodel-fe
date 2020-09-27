@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "vqmodel"
+  "defaultProject": "vqmodel",
+  "cli": {
+    "analytics": "05dc9652-1f89-4709-8611-4a6dc6d7f507"
+  }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AircraftClass, AircraftService} from '../service/aircraft/aircraft.service';
+import {environment} from "../../environments/environment";
 
 @Component({
   selector: 'app-aircraft-classes',
