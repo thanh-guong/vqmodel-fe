@@ -11,7 +11,6 @@
       <div fxShow="true" fxHide.lt-md="true">
         <!-- The following menu items will be hidden on both SM and XS screen sizes -->
         <app-toolbar-button [item]=aircrafts></app-toolbar-button>
-        <app-toolbar-button [item]=factory></app-toolbar-button>
         <app-toolbar-button [item]=reviews></app-toolbar-button>
         <app-toolbar-button [item]=distributors></app-toolbar-button>
         <app-toolbar-button [item]=contactUs></app-toolbar-button>
@@ -25,10 +24,6 @@
         <a (click)="sidenav.toggle()" routerLink={{aircrafts.route}} mat-list-item>
           <mat-icon>{{aircrafts.icon}}</mat-icon>
           {{aircrafts.name}}
-        </a>
-        <a (click)="sidenav.toggle()" routerLink={{factory.route}} mat-list-item>
-          <mat-icon>{{factory.icon}}</mat-icon>
-          {{factory.name}}
         </a>
         <a (click)="sidenav.toggle()" routerLink={{reviews.route}} mat-list-item>
           <mat-icon>{{reviews.icon}}</mat-icon>

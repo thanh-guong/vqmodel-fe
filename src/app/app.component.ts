@@ -19,13 +19,6 @@ export class AppComponent
       route: environment.aircraftRoute,
     };
 
-  public factory =
-    {
-      name: 'Factory',
-      icon: 'construction',
-      route: environment.factoryRoute,
-    };
-
   public reviews =
     {
       name: 'Reviews',
