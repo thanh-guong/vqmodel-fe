@@ -8,7 +8,7 @@ import {Distributor, DistributorsService} from '../service/distributors/distribu
   styleUrls: ['./distributors.component.css']
 })
 export class DistributorsComponent implements OnInit {
-  displayedColumns: string[] = ['name', 'country', 'phone', ];  // This has to match with the Distributor interface
+  displayedColumns: string[] = ['name', 'country', 'phone', 'web', ];  // This has to match with the Distributor interface
   dataSource: MatTableDataSource<Distributor>;
 
   constructor(private distributorsService: DistributorsService)
