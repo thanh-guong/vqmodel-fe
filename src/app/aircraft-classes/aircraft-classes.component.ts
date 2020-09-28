@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AircraftClass, AircraftService} from '../service/aircraft/aircraft.service';
-import {environment} from "../../environments/environment";
+import {environment} from '../../environments/environment';
 
 @Component({
   selector: 'app-aircraft-classes',
@@ -8,6 +8,8 @@ import {environment} from "../../environments/environment";
   styleUrls: ['./aircraft-classes.component.css']
 })
 export class AircraftClassesComponent implements OnInit {
+
+  loading: boolean;
 
   aircraftClasses: AircraftClass[];
 
@@ -18,11 +20,21 @@ export class AircraftClassesComponent implements OnInit {
 
   ngOnInit(): void
   {
+    this.loading = true;
+
     this.aircraftService.getAllAircraftClasses().subscribe(
       data => {
       this.aircraftClasses = data;
+      this.loading = false;
     },
-        error => {console.log(error); });
+        error => {
+        if (!environment.production)
+        {
+          console.log(error);
+        }
+
+        this.loading = false;
+      });
   }
 
 }

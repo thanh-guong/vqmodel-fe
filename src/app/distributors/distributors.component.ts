@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import {Distributor, DistributorsService} from '../service/distributors/distributors.service';
+import {environment} from "../../environments/environment";
 
 @Component({
   selector: 'app-distributors',
@@ -8,6 +9,7 @@ import {Distributor, DistributorsService} from '../service/distributors/distribu
   styleUrls: ['./distributors.component.css']
 })
 export class DistributorsComponent implements OnInit {
+  loading: boolean;
   displayedColumns: string[] = ['name', 'country', 'phone', 'web', ];  // This has to match with the Distributor interface
   dataSource: MatTableDataSource<Distributor>;
 
@@ -16,11 +18,20 @@ export class DistributorsComponent implements OnInit {
 
   ngOnInit(): void
   {
+    this.loading = true;
     this.distributorsService.getAllDistributors().subscribe(
       data => {
         this.dataSource = new MatTableDataSource<Distributor>(data);
+        this.loading = false;
         },
-      error => { console.log(error); }
+      error => {
+        if (!environment.production)
+        {
+          console.log(error);
+        }
+
+        this.loading = false;
+      }
     );
   }
 }

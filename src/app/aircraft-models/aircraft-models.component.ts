@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { AircraftModel, AircraftService} from '../service/aircraft/aircraft.service';
 import {ActivatedRoute} from "@angular/router";
+import {environment} from "../../environments/environment";
 
 @Component({
   selector: 'app-aircraft-models',
@@ -8,6 +9,8 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./aircraft-models.component.css']
 })
 export class AircraftModelsComponent implements OnInit {
+
+  loading: boolean;
 
   aircraftClassId: number;
 
@@ -20,6 +23,8 @@ export class AircraftModelsComponent implements OnInit {
 
   ngOnInit(): void
   {
+    this.loading = true;
+
     this.activatedRoute.paramMap.subscribe(params => {
       this.aircraftClassId = +params.get('aircraftClassId');
     });
@@ -27,8 +32,16 @@ export class AircraftModelsComponent implements OnInit {
     this.aircraftService.getAircraftModelsByClass(this.aircraftClassId).subscribe(
       data => {
         this.aircraftModels = data;
+        this.loading = false;
       },
-    error => {console.log(error); }
+    error => {
+        if (!environment.production)
+        {
+          console.log(error);
+        }
+
+        this.loading = true;
+      }
     );
   }
 

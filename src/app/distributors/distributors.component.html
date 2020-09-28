@@ -1,4 +1,5 @@
 <div class="custom-container">
+  <app-progress-bar *ngIf="loading"></app-progress-bar>
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <!--- Note that these columns can be defined in any order.

@@ -31,6 +31,8 @@ import { AircraftClassesComponent } from './aircraft-classes/aircraft-classes.co
 import { AircraftClassCardComponent } from './aircraft-class-card/aircraft-class-card.component';
 import { AircraftModelsComponent } from './aircraft-models/aircraft-models.component';
 import { AircraftModelCardComponent } from './aircraft-model-card/aircraft-model-card.component';
+import { ProgressBarComponent } from './progress-bar/progress-bar.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -45,27 +47,29 @@ import { AircraftModelCardComponent } from './aircraft-model-card/aircraft-model
     AircraftClassCardComponent,
     AircraftModelsComponent,
     AircraftModelCardComponent,
+    ProgressBarComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    FlexLayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
-    MatCardModule,
-    MatGridListModule,
-    MatPaginatorModule,
-    MatTableModule,
-    MatInputModule,
-    FormsModule,
-    ReactiveFormsModule,
-    NgbModule,
-    HttpClientModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        FlexLayoutModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatSidenavModule,
+        MatIconModule,
+        MatListModule,
+        MatCardModule,
+        MatGridListModule,
+        MatPaginatorModule,
+        MatTableModule,
+        MatInputModule,
+        FormsModule,
+        ReactiveFormsModule,
+        NgbModule,
+        HttpClientModule,
+        MatProgressBarModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

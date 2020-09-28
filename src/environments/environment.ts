@@ -10,7 +10,7 @@ export const environment = {
   reviewsRoute: 'reviews',
   distributorsRoute: 'distributors',
   contactUsRoute: 'contact-us',
-  remoteHost: 'localhost',
+  remoteHost: '192.168.1.9',
   remotePort: '8000',
   remoteApiPrefix: 'api',
   aircraftClassRemoteRoute: 'aircraftclasses',

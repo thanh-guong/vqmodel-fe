@@ -9,6 +9,9 @@ import {Review, ReviewsService} from '../service/reviews/reviews.service';
 })
 export class ReviewsComponent implements OnInit {
 
+  loading: boolean;
+  error: boolean;
+
   reviews: Review[];
 
   constructor(private reviewsService: ReviewsService)
@@ -18,11 +21,18 @@ export class ReviewsComponent implements OnInit {
 
   ngOnInit(): void
   {
+    this.loading = true;
+    this.error = false;
+
     this.reviewsService.getAllReviews().subscribe(
       data => {
         this.reviews = data;
+        this.loading = false;
       },
-      error => { console.log(error); });
+      error => {
+        console.log(error);
+        this.error = true;
+      });
   }
 
 }
