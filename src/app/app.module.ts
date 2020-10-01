@@ -33,6 +33,8 @@ import { AircraftModelsComponent } from './aircraft-models/aircraft-models.compo
 import { AircraftModelCardComponent } from './aircraft-model-card/aircraft-model-card.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { AircraftVersionsComponent } from './aircraft-versions/aircraft-versions.component';
+import { AircraftVersionCardComponent } from './aircraft-version-card/aircraft-version-card.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     AircraftModelsComponent,
     AircraftModelCardComponent,
     ProgressBarComponent,
+    AircraftVersionsComponent,
+    AircraftVersionCardComponent,
   ],
     imports: [
         BrowserModule,

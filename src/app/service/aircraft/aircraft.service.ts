@@ -24,13 +24,22 @@ const SOLITARY_TEST_AIRCRAFT_CLASS: AircraftClass[] = [
 
 export interface AircraftModel
 {
+  id: number;
   name: string;
   image: string;
 }
 
 const SOLITARY_TEST_AIRCRAFT_MODELS: AircraftModel[] = [
-  {name: '', image: '', },
+  {id: 1, name: '', image: '', },
 ];
+
+export interface AircraftVersion
+{
+  id: number;
+  name: string;
+  color: string;
+  images: string[];
+}
 
 @Injectable({
   providedIn: 'root'
@@ -62,6 +71,15 @@ export class AircraftService extends SuperService
   {
     return this.http.get<AircraftModel[]>(this.generateRemoteAddressForApi(environment.aircraftModelRemoteRoute)
       + '/' + aircraftClassId + '/' + environment.getAircraftModelsByClass);
+  }
+
+  /***
+   * Aircraft versions
+   */
+  public getAircraftVersionsByModel(aircraftModelId: number): Observable<AircraftVersion[]>
+  {
+    return this.http.get<AircraftVersion[]>(this.generateRemoteAddressForApi(environment.aircraftVersionRemoteRoute)
+      + '/' + aircraftModelId + '/' + environment.getAircraftVersionsByModel);
   }
 
 }

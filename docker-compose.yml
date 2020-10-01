@@ -1,0 +1,6 @@
+version: "3"
+services:
+  vqmodel-fe:
+    build: .
+    ports:
+      - 4200:4200
