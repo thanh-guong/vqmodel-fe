@@ -6,6 +6,7 @@ export const environment = {
   production: false,
   aircraftRoute: 'aircraft-classes',
   aircraftModelsRoute: 'aircraft-models',
+  aircraftModelDetailRoute: 'aircraft-model-detail',
   factoryRoute: 'factory',
   reviewsRoute: 'reviews',
   distributorsRoute: 'distributors',

@@ -1,0 +1,31 @@
+<app-progress-bar *ngIf="loading"></app-progress-bar>
+
+<h1 class="page-title">{{aircraftModel.name}}</h1>
+
+<ng-container>
+  <mat-card class="card">
+    <mat-card-title>Technical details</mat-card-title>
+    <mat-card-content>
+      <ul>
+        <li>Wingspan: {{aircraftModel.wingspan}}</li>
+        <li>Length: {{aircraftModel.length}}</li>
+        <li>Weight: {{aircraftModel.weight}}</li>
+        <li>Radio req: {{aircraftModel.radio_req}}</li>
+      </ul>
+    </mat-card-content>
+  </mat-card>
+</ng-container>
+
+<h1 class="page-title">Available versions</h1>
+
+<div
+  fxLayout="row wrap"
+  fxLayout.lt-sm="column"
+  fxLayoutAlign="flex-start">
+
+  <ng-container *ngFor="let a of aircraftVersions">
+    <app-aircraft-version-card [aircraftVersion]="a" fxFlex="0 1 calc(33.3%" fxFlex.lt-md="0 1 calc(50%)" fxFlex.lt-sm="100%">
+    </app-aircraft-version-card>
+  </ng-container>
+
+</div>

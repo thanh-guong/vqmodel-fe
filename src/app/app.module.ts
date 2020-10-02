@@ -27,14 +27,15 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { AircraftClassesComponent } from './aircraft-classes/aircraft-classes.component';
-import { AircraftClassCardComponent } from './aircraft-class-card/aircraft-class-card.component';
-import { AircraftModelsComponent } from './aircraft-models/aircraft-models.component';
-import { AircraftModelCardComponent } from './aircraft-model-card/aircraft-model-card.component';
+import { AircraftClassesComponent } from './aircrafts/aircraft-classes/aircraft-classes.component';
+import { AircraftClassCardComponent } from './aircrafts/aircraft-classes/aircraft-class-card/aircraft-class-card.component';
+import { AircraftModelsComponent } from './aircrafts/aircraft-models/aircraft-models.component';
+import { AircraftModelCardComponent } from './aircrafts/aircraft-models/aircraft-model-card/aircraft-model-card.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
-import { AircraftVersionsComponent } from './aircraft-versions/aircraft-versions.component';
-import { AircraftVersionCardComponent } from './aircraft-version-card/aircraft-version-card.component';
+import { AircraftVersionCardComponent } from './aircrafts/aircraft-model-detail/aircraft-version-card/aircraft-version-card.component';
+import {IvyCarouselModule} from 'angular-responsive-carousel';
+import { AircraftModelDetailComponent } from './aircrafts/aircraft-model-detail/aircraft-model-detail.component';
 
 @NgModule({
   declarations: [
@@ -50,8 +51,8 @@ import { AircraftVersionCardComponent } from './aircraft-version-card/aircraft-v
     AircraftModelsComponent,
     AircraftModelCardComponent,
     ProgressBarComponent,
-    AircraftVersionsComponent,
     AircraftVersionCardComponent,
+    AircraftModelDetailComponent,
   ],
     imports: [
         BrowserModule,
@@ -73,6 +74,7 @@ import { AircraftVersionCardComponent } from './aircraft-version-card/aircraft-v
         NgbModule,
         HttpClientModule,
         MatProgressBarModule,
+        IvyCarouselModule,
     ],
   providers: [],
   bootstrap: [AppComponent]
