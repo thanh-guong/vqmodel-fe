@@ -33,7 +33,7 @@ export class AircraftVersionCardComponent implements OnInit {
 
   generateUrlForImage(index: number): string
   {
-    // this is not an error
+    // @ts-ignore
     return 'http://' + environment.remoteHost + ':' + environment.remotePort + this.aircraftVersion.images[index].image;
   }
 

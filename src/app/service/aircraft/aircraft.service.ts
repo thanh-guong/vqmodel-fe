@@ -43,7 +43,7 @@ export interface AircraftVersion
   id: number;
   name: string;
   color: string;
-  images: string[];
+  images: object[];
 }
 
 @Injectable({
