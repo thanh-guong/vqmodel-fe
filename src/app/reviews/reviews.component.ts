@@ -31,6 +31,7 @@ export class ReviewsComponent implements OnInit {
       },
       error => {
         console.log(error);
+        this.loading = false;
         this.error = false;
       });
   }
