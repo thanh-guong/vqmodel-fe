@@ -17,6 +17,8 @@ export class AircraftClassCardComponent implements OnInit {
   @Input()
   public id: number;
 
+  public imageLoaded: boolean;
+
   constructor() { }
 
   ngOnInit(): void { }
@@ -24,5 +26,10 @@ export class AircraftClassCardComponent implements OnInit {
   getAircraftModelPath(): string
   {
     return '/' + environment.aircraftModelsRoute + '/' + this.id;
+  }
+
+  onImageLoad(): void
+  {
+    this.imageLoaded = true;
   }
 }
