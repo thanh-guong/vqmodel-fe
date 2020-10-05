@@ -16,7 +16,7 @@ import { MatListModule } from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { ReviewsComponent } from './reviews/reviews.component';
-import { ReviewCardComponent } from './review-card/review-card.component';
+import { ReviewCardComponent } from './reviews/review-card/review-card.component';
 import { DistributorsComponent } from './distributors/distributors.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableModule} from '@angular/material/table';

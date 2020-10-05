@@ -16,9 +16,16 @@ export class ReviewCardComponent implements OnInit {
   @Input()
   public download: string;
 
+  public imageLoaded: boolean;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onImageLoad(): void
+  {
+    this.imageLoaded = true;
   }
 
 }
