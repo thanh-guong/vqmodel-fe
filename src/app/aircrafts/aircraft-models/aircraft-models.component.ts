@@ -52,6 +52,7 @@ export class AircraftModelsComponent implements OnInit {
         for (const am in this.aircraftModels)
         {
           let versions: object;
+
           versions = this.aircraftModels[+am].versions;
           console.log(versions);
 
@@ -60,7 +61,9 @@ export class AircraftModelsComponent implements OnInit {
           console.log(randomVersion);
 
           // @ts-ignore
-          const randomImage = randomVersion.images[Math.floor(Math.random() * versions.length)].image;
+          const randomIndex = Math.floor(Math.random() * randomVersion.images.length);
+          console.log(randomIndex);
+          const randomImage = randomVersion.images[randomIndex].image;
           console.log(randomImage);
 
           this.aircraftModels[+am].image = this.aircraftService.generateUrlForImage(randomImage);
