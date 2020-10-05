@@ -42,7 +42,7 @@ export class AircraftModelDetailComponent implements OnInit {
           console.log(error);
         }
 
-        this.loading = true;
+        this.loading = false;
       }
     );
 

@@ -1,5 +1,9 @@
 <app-progress-bar *ngIf="loading"></app-progress-bar>
+
+<h1 class="page-title">Aircraft classes</h1>
+
 <div
+  *ngIf="!loading"
   fxLayout="row wrap"
   fxLayout.lt-sm="column"
   fxLayoutAlign="flex-start">

@@ -1,12 +1,12 @@
 <app-progress-bar *ngIf="loading"></app-progress-bar>
 
-<h1 class="page-title">{{aircraftModel.name}}</h1>
+<h1 *ngIf="!loading" class="page-title">{{aircraftModel.name}}</h1>
 
 <ng-container>
   <mat-card class="card">
     <mat-card-title>Technical details</mat-card-title>
     <mat-card-content>
-      <ul>
+      <ul *ngIf="!loading">
         <li>Wingspan: {{aircraftModel.wingspan}}</li>
         <li>Length: {{aircraftModel.length}}</li>
         <li>Weight: {{aircraftModel.weight}}</li>
@@ -19,6 +19,7 @@
 <h1 class="page-title">Available versions</h1>
 
 <div
+  *ngIf="!loading"
   fxLayout="row wrap"
   fxLayout.lt-sm="column"
   fxLayoutAlign="flex-start">

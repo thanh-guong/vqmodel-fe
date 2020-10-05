@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {AircraftModel, AircraftService, AircraftVersion} from '../../service/aircraft/aircraft.service';
+import {Component, OnInit} from '@angular/core';
+import {AircraftClass, AircraftModel, AircraftService} from '../../service/aircraft/aircraft.service';
 import {ActivatedRoute} from "@angular/router";
 import {environment} from "../../../environments/environment";
 
@@ -16,9 +16,10 @@ export class AircraftModelsComponent implements OnInit {
 
   aircraftModels: AircraftModel[];
 
+  aircraftClassName: string;
+
   constructor(private aircraftService: AircraftService, private activatedRoute: ActivatedRoute)
   {
-
   }
 
   ngOnInit(): void
@@ -28,6 +29,18 @@ export class AircraftModelsComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe(params => {
       this.aircraftClassId = +params.get('aircraftClassId');
     });
+
+    this.aircraftService.getAircraftClassById(this.aircraftClassId).subscribe(
+      data => {
+        this.aircraftClassName = data.name;
+        this.loading = false;
+      },
+      error => {
+        if (!environment.production) {
+          console.log(error);
+        }
+      }
+    );
 
     // get aircraft models
     this.aircraftService.getAircraftModelsByClass(this.aircraftClassId).subscribe(
@@ -50,7 +63,7 @@ export class AircraftModelsComponent implements OnInit {
           const randomImage = randomVersion.images[Math.floor(Math.random() * versions.length)].image;
           console.log(randomImage);
 
-          this.aircraftModels[+am].image = this.generateUrlForImage(randomImage);
+          this.aircraftModels[+am].image = this.aircraftService.generateUrlForImage(randomImage);
         }
 
         console.log(this.aircraftModels);
@@ -61,15 +74,9 @@ export class AircraftModelsComponent implements OnInit {
           console.log(error);
         }
 
-        this.loading = true;
+        this.loading = false;
       }
     );
-  }
-
-  public generateUrlForImage(image: string): string
-  {
-    // this is not an error
-    return 'http://' + environment.remoteHost + ':' + environment.remotePort + image;
   }
 
 }

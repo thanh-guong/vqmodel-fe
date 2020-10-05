@@ -1,9 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-a:hover { color: unset; }
-a {
+html, body
+{
+  height: 100%;
+}
+
+body
+{
+  margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+a:hover
+{
+  color: unset;
+}
+
+a
+{
   color: unset;
   text-decoration: none;
+}
+
+/* Used by Cards in aircraft components */
+.card
+{
+  margin: 16px !important;
+}
+
+.page-title
+{
+  margin: 16px !important;;
 }

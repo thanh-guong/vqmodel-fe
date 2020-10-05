@@ -69,6 +69,12 @@ export class AircraftService extends SuperService
     return this.http.get<AircraftClass[]>(this.generateRemoteAddressForApi(environment.aircraftClassRemoteRoute));
   }
 
+  public getAircraftClassById(id: number): Observable<AircraftClass>
+  {
+    return this.http.get<AircraftClass>(this.generateRemoteAddressForApi(environment.aircraftClassRemoteRoute
+      + '/' + id));
+  }
+
   /***
    * Aircraft models
    */

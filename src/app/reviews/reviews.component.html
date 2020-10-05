@@ -1,5 +1,9 @@
 <app-progress-bar *ngIf="loading"></app-progress-bar>
+
+<h1 *ngIf="!loading" class="page-title">How our products are evaluated</h1>
+
 <div
+  *ngIf="!loading"
   fxLayout="row wrap"
   fxLayout.lt-sm="column"
   fxLayoutAlign="flex-start">

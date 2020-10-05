@@ -1,12 +1,14 @@
 <app-progress-bar *ngIf="loading"></app-progress-bar>
+
+<h1 *ngIf="!loading" class="page-title">{{aircraftClassName}} models</h1>
+
 <div
+  *ngIf="!loading"
   fxLayout="row wrap"
   fxLayout.lt-sm="column"
   fxLayoutAlign="flex-start">
-
   <ng-container *ngFor="let a of aircraftModels">
     <app-aircraft-model-card [id]="a.id" [name]="a.name" [image]="a.image" fxFlex="0 1 calc(33.3%" fxFlex.lt-md="0 1 calc(50%)" fxFlex.lt-sm="100%">
     </app-aircraft-model-card>
   </ng-container>
-
 </div>

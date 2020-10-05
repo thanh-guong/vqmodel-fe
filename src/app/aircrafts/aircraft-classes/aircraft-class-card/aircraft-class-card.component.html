@@ -1,9 +1,15 @@
 <mat-card class="card">
-  <div>
-    <a routerLink={{getAircraftModelPath()}}>
+  <a [routerLink]="getAircraftModelPath()">
+    <mat-card-header>
+      <mat-card-title>{{name}}</mat-card-title>
+    </mat-card-header>
 
-    <mat-card-title>{{name}}</mat-card-title>
-    <img mat-card-image src={{image}} alt="mat-card-image">
-    </a>
-  </div>
+    <img mat-card-image [src]="image" alt="mat-card-image">
+
+    <mat-card-content>
+    </mat-card-content>
+
+    <mat-card-footer>
+    </mat-card-footer>
+  </a>
 </mat-card>
