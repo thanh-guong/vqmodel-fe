@@ -2,8 +2,22 @@
 
 <h1 *ngIf="!loading" class="page-title">{{aircraftModel.name}}</h1>
 
-<ng-container>
-  <mat-card class="card">
+<div
+  *ngIf="!loading"
+  fxLayout="row wrap"
+  fxLayout.lt-sm="column"
+  fxLayoutAlign="flex-start">
+  <mat-card class="card" fxFlex="0 1 calc(45%" fxFlex.lt-md="0 1 calc(45%)" fxFlex.lt-sm="100%">
+    <mat-card-title>Story</mat-card-title>
+    <mat-card-content>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="card" fxFlex="0 1 calc(45%" fxFlex.lt-md="0 1 calc(45%)" fxFlex.lt-sm="100%">
     <mat-card-title>Technical details</mat-card-title>
     <mat-card-content>
       <ul *ngIf="!loading">
@@ -11,19 +25,29 @@
         <li>Length: {{aircraftModel.length}}</li>
         <li>Weight: {{aircraftModel.weight}}</li>
         <li>Radio req: {{aircraftModel.radio_req}}</li>
+          <h2>Includes:</h2>
+        <li *ngFor="let il of aircraftModel.include_list">{{il.name}}</li>
+          <h2>Does not include:</h2>
+        <li *ngFor="let dnil of aircraftModel.does_not_include_list">{{dnil.name}}</li>
+          <h2>Features:</h2>
+        <li *ngFor="let fl of aircraftModel.features_list">{{fl.name}}</li>
       </ul>
     </mat-card-content>
   </mat-card>
-</ng-container>
+</div>
 
-<ng-container>
-  <mat-card *ngIf="!loading" class="card this-card">
-    <mat-card-title>Technical details</mat-card-title>
-    <img [hidden]="loading" mat-card-image [src]="aircraftModel.image.image" alt="mat-card-image">
-  </mat-card>
-</ng-container>
+<h1>Photos</h1>
 
-<h1 class="page-title">Available versions</h1>
+<div
+  *ngIf="!loading"
+  fxLayout="row wrap"
+  fxLayout.lt-sm="column"
+  fxLayoutAlign="flex-start">
+<mat-card *ngIf="!loading" class="card this-card" fxFlex="0 1 calc(33.3%" fxFlex.lt-md="0 1 calc(50%)" fxFlex.lt-sm="100%">
+  <mat-card-title>Technical details</mat-card-title>
+  <img [hidden]="loading" mat-card-image [src]="aircraftModel.image.image" alt="mat-card-image">
+</mat-card>
+</div>
 
 <div
   *ngIf="!loading"

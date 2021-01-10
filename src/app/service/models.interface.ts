@@ -11,15 +11,34 @@ export interface IAircraftClass
   image: IImage;
 }
 
+export interface IAircraftModelAccessory
+{
+  id: number;
+  name: string;
+}
+
+export interface IAircraftModelFeature
+{
+  id: number;
+  name: string;
+}
+
 export interface IAircraftModel
 {
   id: number;
   name: string;
-  image: IImage;
+  category: string;
+  story: string;
+  include_list: IAircraftModelAccessory[];
+  does_not_include_list: IAircraftModelAccessory[];
+  features_list: IAircraftModelFeature[];
   wingspan: number;
   weight: number;
   length: number;
   radio_req: string;
+  engines: string;
+  manual: string;
+  image: IImage;
   versions: object;
 }
 

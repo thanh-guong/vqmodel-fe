@@ -9,14 +9,28 @@ import {IAircraftVersion} from '../../../service/models.interface';
 export class AircraftVersionCardComponent implements OnInit {
 
   @Input()
-  public aircraftVersion: IAircraftVersion;
+  public name: string;
 
-  public carouselImagesUrls: [{}] = [{}];
+  @Input()
+  public image: string;
+
+  @Input()
+  public id: number;
+
+  public imageLoaded: boolean;
+
+  @Input()
+  public aircraftVersion: IAircraftVersion;
 
   constructor() { }
 
   ngOnInit(): void
   {
 
+  }
+
+  onImageLoad(): void
+  {
+    this.imageLoaded = true;
   }
 }

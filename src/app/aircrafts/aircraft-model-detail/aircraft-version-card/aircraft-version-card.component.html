@@ -4,11 +4,8 @@
     <mat-card-subtitle>{{aircraftVersion.color}}</mat-card-subtitle>
   </mat-card-header>
 
-  <carousel
-    [images]="carouselImagesUrls"
-    [cellWidth]="400"
-  >
-  </carousel>
+  <img [hidden]="!imageLoaded" mat-card-image [src]="image" alt="mat-card-image" (load)="onImageLoad();">
+  <mat-spinner *ngIf="!imageLoaded"></mat-spinner>
 
   <mat-card-content>
   </mat-card-content>
@@ -16,3 +13,5 @@
   <mat-card-footer>
   </mat-card-footer>
 </mat-card>
+
+
