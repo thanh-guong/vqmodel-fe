@@ -16,6 +16,13 @@
   </mat-card>
 </ng-container>
 
+<ng-container>
+  <mat-card *ngIf="!loading" class="card this-card">
+    <mat-card-title>Technical details</mat-card-title>
+    <img [hidden]="loading" mat-card-image [src]="aircraftModel.image.image" alt="mat-card-image">
+  </mat-card>
+</ng-container>
+
 <h1 class="page-title">Available versions</h1>
 
 <div

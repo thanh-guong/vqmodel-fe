@@ -36,7 +36,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { AircraftVersionCardComponent } from './aircrafts/aircraft-model-detail/aircraft-version-card/aircraft-version-card.component';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
 import { AircraftModelDetailComponent } from './aircrafts/aircraft-model-detail/aircraft-model-detail.component';
-import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [

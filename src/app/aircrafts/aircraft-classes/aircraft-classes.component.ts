@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {AircraftClass, AircraftService} from '../../service/aircraft/aircraft.service';
-import {environment} from '../../../environments/environment';
+import { environment } from '../../../environments/environment';
+import { IAircraftClass } from '../../service/models.interface';
+import { AircraftService } from '../../service/aircraft/aircraft.service';
 
 @Component({
   selector: 'app-aircraft-classes',
@@ -11,7 +12,7 @@ export class AircraftClassesComponent implements OnInit {
 
   loading: boolean;
 
-  aircraftClasses: AircraftClass[];
+  aircraftClasses: IAircraftClass[];
 
   constructor(private aircraftService: AircraftService)
   {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {AircraftClass, AircraftService} from '../service/aircraft/aircraft.service';
-import {Review, ReviewsService} from '../service/reviews/reviews.service';
+import { IReview } from '../service/models.interface';
+import { ReviewsService } from '../service/reviews/reviews.service';
+
 
 @Component({
   selector: 'app-reviews',
@@ -12,7 +13,7 @@ export class ReviewsComponent implements OnInit {
   loading: boolean;
   error: boolean;
 
-  reviews: Review[];
+  reviews: IReview[];
 
   constructor(private reviewsService: ReviewsService)
   {

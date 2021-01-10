@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {AircraftClass, AircraftModel, AircraftService} from '../../service/aircraft/aircraft.service';
-import {ActivatedRoute} from "@angular/router";
-import {environment} from "../../../environments/environment";
+import {ActivatedRoute} from '@angular/router';
+import {environment} from '../../../environments/environment';
+import {IAircraftModel} from '../../service/models.interface';
+import {AircraftService} from '../../service/aircraft/aircraft.service';
 
 @Component({
   selector: 'app-aircraft-models',
@@ -14,7 +15,7 @@ export class AircraftModelsComponent implements OnInit {
 
   aircraftClassId: number;
 
-  aircraftModels: AircraftModel[];
+  aircraftModels: IAircraftModel[];
 
   aircraftClassName: string;
 
@@ -47,29 +48,6 @@ export class AircraftModelsComponent implements OnInit {
       data => {
         this.aircraftModels = data;
         this.loading = false;
-
-        // extract a random picture from each model versions
-        for (const am in this.aircraftModels)
-        {
-          let versions: object;
-
-          versions = this.aircraftModels[+am].versions;
-          console.log(versions);
-
-          // @ts-ignore
-          const randomVersion = versions[Math.floor(Math.random() * versions.length)];
-          console.log(randomVersion);
-
-          // @ts-ignore
-          const randomIndex = Math.floor(Math.random() * randomVersion.images.length);
-          console.log(randomIndex);
-          const randomImage = randomVersion.images[randomIndex].image;
-          console.log(randomImage);
-
-          this.aircraftModels[+am].image = this.aircraftService.generateUrlForImage(randomImage);
-        }
-
-        console.log(this.aircraftModels);
       },
     error => {
         if (!environment.production)

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {AircraftModel, AircraftService, AircraftVersion} from "../../service/aircraft/aircraft.service";
-import {ActivatedRoute} from "@angular/router";
-import {environment} from "../../../environments/environment";
+import { ActivatedRoute } from '@angular/router';
+import {IAircraftModel, IAircraftVersion} from '../../service/models.interface';
+import {AircraftService} from '../../service/aircraft/aircraft.service';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-aircraft-model-detail',
@@ -14,9 +15,9 @@ export class AircraftModelDetailComponent implements OnInit {
 
   aircraftModelId: number;
 
-  public aircraftVersions: AircraftVersion[];
+  public aircraftVersions: IAircraftVersion[];
 
-  public aircraftModel: AircraftModel;
+  public aircraftModel: IAircraftModel;
 
   public aircraftModelName = 'AircraftModelName';
 
@@ -34,15 +35,12 @@ export class AircraftModelDetailComponent implements OnInit {
     this.aircraftService.getAircraftVersionsByModel(this.aircraftModelId).subscribe(
       data => {
         this.aircraftVersions = data;
-        this.loading = false;
       },
       error => {
         if (!environment.production)
         {
           console.log(error);
         }
-
-        this.loading = false;
       }
     );
 
@@ -56,9 +54,10 @@ export class AircraftModelDetailComponent implements OnInit {
         if (!environment.production)
         {
           console.log(error);
+          this.loading = false;
         }
 
-        this.loading = true;
+        this.loading = false;
       }
     );
   }

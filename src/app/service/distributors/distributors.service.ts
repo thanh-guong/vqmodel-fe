@@ -2,17 +2,9 @@ import { Injectable } from '@angular/core';
 import {environment} from '../../../environments/environment';
 import {SuperService} from '../super.service';
 import {Observable} from 'rxjs';
+import {IDistributor} from '../models.interface';
 
-export interface Distributor
-{
-  name: string;
-  country: string;
-  address: string;
-  phone: string;
-  website: string;
-}
-
-const SOLITARY_TEST_DISTRIBUTOR: Distributor[] = [
+const SOLITARY_TEST_DISTRIBUTOR: IDistributor[] = [
   {
     name: 'HQQ',
     country: 'Australia',
@@ -182,7 +174,7 @@ const SOLITARY_TEST_DISTRIBUTOR: Distributor[] = [
 })
 export class DistributorsService  extends SuperService
 {
-  public getDistributors(): Distributor[]
+  public getDistributors(): IDistributor[]
   {
     if (!environment.production && environment.solitary_mode)
     {
@@ -192,8 +184,8 @@ export class DistributorsService  extends SuperService
     return null;
   }
 
-  public getAllDistributors(): Observable<Distributor[]>
+  public getAllDistributors(): Observable<IDistributor[]>
   {
-    return this.http.get<Distributor[]>(this.generateRemoteAddressForApi(environment.distributorsRoute));
+    return this.http.get<IDistributor[]>(this.generateRemoteAddressForApi(environment.distributorsRoute));
   }
 }
