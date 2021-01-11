@@ -6,7 +6,7 @@
   *ngIf="!loading"
   fxLayout="row wrap"
   fxLayout.lt-sm="column"
-  fxLayoutAlign="flex-start">
+  fxLayoutAlign="space-evenly">
   <ng-container *ngFor="let a of aircraftClasses">
       <app-aircraft-class-card [name]="a.name" [image]="a.image.image" [id]="a.id"
                                fxFlex="0 1 calc(33.3%"

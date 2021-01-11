@@ -6,7 +6,7 @@
   *ngIf="!loading"
   fxLayout="row wrap"
   fxLayout.lt-sm="column"
-  fxLayoutAlign="flex-start">
+  fxLayoutAlign="space-evenly">
   <mat-card class="card" fxFlex="0 1 calc(45%" fxFlex.lt-md="0 1 calc(45%)" fxFlex.lt-sm="100%">
     <mat-card-title>Story</mat-card-title>
     <mat-card-content>
@@ -42,7 +42,7 @@
   *ngIf="!loading"
   fxLayout="row wrap"
   fxLayout.lt-sm="column"
-  fxLayoutAlign="flex-start">
+  fxLayoutAlign="space-evenly">
 <mat-card *ngIf="!loading" class="card this-card" fxFlex="0 1 calc(33.3%" fxFlex.lt-md="0 1 calc(50%)" fxFlex.lt-sm="100%">
   <mat-card-title>Technical details</mat-card-title>
   <img [hidden]="loading" mat-card-image [src]="aircraftModel.image.image" alt="mat-card-image">
@@ -53,7 +53,7 @@
   *ngIf="!loading"
   fxLayout="row wrap"
   fxLayout.lt-sm="column"
-  fxLayoutAlign="flex-start">
+  fxLayoutAlign="space-evenly">
 
   <ng-container *ngFor="let a of aircraftVersions">
     <app-aircraft-version-card [aircraftVersion]="a" fxFlex="0 1 calc(33.3%" fxFlex.lt-md="0 1 calc(50%)" fxFlex.lt-sm="100%">

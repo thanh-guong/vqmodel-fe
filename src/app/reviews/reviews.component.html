@@ -6,7 +6,7 @@
   *ngIf="!loading"
   fxLayout="row wrap"
   fxLayout.lt-sm="column"
-  fxLayoutAlign="flex-start">
+  fxLayoutAlign="space-evenly">
 
   <ng-container *ngFor="let r of reviews">
     <app-review-card [name]="r.magazine_name" [image]="r.image" [download]="r.file" fxFlex="0 1 calc(33.3%)" fxFlex.lt-md="0 1 calc(50%)" fxFlex.lt-sm="100%">
