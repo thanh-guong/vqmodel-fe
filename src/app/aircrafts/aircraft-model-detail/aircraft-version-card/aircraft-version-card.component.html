@@ -1,7 +1,7 @@
 <mat-card class="card">
   <mat-card-header>
     <mat-card-title>{{aircraftVersion.name}}</mat-card-title>
-    <mat-card-subtitle>{{aircraftVersion.color}}</mat-card-subtitle>
+    <mat-card-subtitle>{{aircraftVersion.product_code}}</mat-card-subtitle>
   </mat-card-header>
 
   <img [hidden]="!imageLoaded" mat-card-image [src]="image" alt="mat-card-image" (load)="onImageLoad();">

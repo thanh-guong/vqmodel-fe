@@ -36,28 +36,19 @@
   </mat-card>
 </div>
 
-<h1>Photos</h1>
+<h1 *ngIf="!loading" class="page-title">Photos</h1>
 
 <div
   *ngIf="!loading"
   fxLayout="row wrap"
   fxLayout.lt-sm="column"
   fxLayoutAlign="space-evenly">
-<mat-card *ngIf="!loading" class="card this-card" fxFlex="0 1 calc(33.3%" fxFlex.lt-md="0 1 calc(50%)" fxFlex.lt-sm="100%">
-  <mat-card-title>Technical details</mat-card-title>
-  <img [hidden]="loading" mat-card-image [src]="aircraftModel.image.image" alt="mat-card-image">
-</mat-card>
-</div>
+  <mat-card *ngIf="!loading" class="card this-card" fxFlex="0 1 calc(33.3%" fxFlex.lt-md="0 1 calc(50%)" fxFlex.lt-sm="100%">
+    <mat-card-title>BASE_VERSION_NAME | Classic</mat-card-title>
+    <mat-card-subtitle>PRODUCT_CODE | NOTHING</mat-card-subtitle>
+    <img [hidden]="loading" mat-card-image [src]="aircraftModel.image.image" alt="mat-card-image">
+  </mat-card>
 
-<div
-  *ngIf="!loading"
-  fxLayout="row wrap"
-  fxLayout.lt-sm="column"
-  fxLayoutAlign="space-evenly">
-
-  <ng-container *ngFor="let a of aircraftVersions">
-    <app-aircraft-version-card [aircraftVersion]="a" fxFlex="0 1 calc(33.3%" fxFlex.lt-md="0 1 calc(50%)" fxFlex.lt-sm="100%">
-    </app-aircraft-version-card>
-  </ng-container>
-
+  <app-aircraft-version-card *ngFor="let a of aircraftVersions" [aircraftVersion]="a" fxFlex="0 1 calc(33.3%" fxFlex.lt-md="0 1 calc(50%)" fxFlex.lt-sm="100%">
+  </app-aircraft-version-card>
 </div>

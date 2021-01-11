@@ -46,7 +46,7 @@ export interface IAircraftVersion
 {
   id: number;
   name: string;
-  color: string;
+  product_code: string;
   images: IImage[];
 }
 
