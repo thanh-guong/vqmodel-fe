@@ -1,10 +1,10 @@
-<mat-card class="card">
+<mat-card class="card" *ngFor="let image of aircraftVersion.images">
   <mat-card-header>
     <mat-card-title>{{aircraftVersion.name}}</mat-card-title>
     <mat-card-subtitle>{{aircraftVersion.product_code}}</mat-card-subtitle>
   </mat-card-header>
 
-  <img [hidden]="!imageLoaded" mat-card-image [src]="image" alt="mat-card-image" (load)="onImageLoad();">
+  <img [hidden]="!imageLoaded" mat-card-image [src]="image.image" alt="mat-card-image" (load)="onImageLoad();">
   <mat-spinner *ngIf="!imageLoaded"></mat-spinner>
 
   <mat-card-content>
@@ -13,5 +13,3 @@
   <mat-card-footer>
   </mat-card-footer>
 </mat-card>
-
-
