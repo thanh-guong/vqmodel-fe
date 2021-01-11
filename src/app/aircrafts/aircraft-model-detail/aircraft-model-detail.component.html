@@ -18,7 +18,9 @@
   </mat-card>
 
   <mat-card class="card" fxFlex="0 1 calc(45%" fxFlex.lt-md="0 1 calc(45%)" fxFlex.lt-sm="100%">
-    <mat-card-title>Technical details</mat-card-title>
+    <mat-card-header>
+      <mat-card-title>Technical details</mat-card-title>
+    </mat-card-header>
     <mat-card-content>
       <ul *ngIf="!loading">
         <li>Wingspan: {{aircraftModel.wingspan}}</li>
@@ -33,6 +35,12 @@
         <li *ngFor="let fl of aircraftModel.features_list">{{fl.name}}</li>
       </ul>
     </mat-card-content>
+    <mat-card-actions>
+      <a href="{{aircraftModel.manual}}" target="_blank">
+        <button mat-button><mat-icon>cloud_download</mat-icon> Manual</button>
+      </a>
+
+    </mat-card-actions>
   </mat-card>
 </div>
 
