@@ -1,4 +1,6 @@
 .custom-container
 {
-  margin: 16px;
+  margin: auto;
+  padding: 16px;
+  max-width: 1080px;
 }
