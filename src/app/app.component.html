@@ -7,7 +7,7 @@
       <a routerLink="/" mat-button>
         VQModel
       </a>
-      <span class="example-spacer"></span>
+      <span class=""></span>
       <div fxShow="true" fxHide.lt-md="true">
         <!-- The following menu items will be hidden on both SM and XS screen sizes -->
         <app-toolbar-button [item]=aircrafts></app-toolbar-button>
@@ -15,6 +15,16 @@
         <app-toolbar-button [item]=distributors></app-toolbar-button>
         <app-toolbar-button [item]=contactUs></app-toolbar-button>
       </div>
+
+      <!--.
+      future social buttons here
+      <span class="float-right-spacer"></span>
+      <div>
+        <a href="https://www.youtube.com/channel/UCMbnoRZfKTliAj29ZPiZurQ" target="_blank">
+          <img style="width: 64px; height: 45px;" src="assets/images/youtube_social_icon_dark.png" alt="">
+        </a>
+      </div>
+      -->
     </mat-toolbar-row>
   </mat-toolbar>
 
@@ -46,10 +56,10 @@
 
     <mat-sidenav-content>
       <router-outlet fxFlexFill></router-outlet>
-      <app-home *ngIf="router.url === '/'"></app-home>
+      <app-home fxFlexFill *ngIf="router.url === '/'"></app-home>
     </mat-sidenav-content>
-
   </mat-sidenav-container>
+
 
 </div>
 

@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {IAircraftVersion} from '../../../service/models.interface';
+import {IAircraftVersion, IImage} from '../../../service/models.interface';
 
 @Component({
   selector: 'app-aircraft-version-card',
@@ -12,15 +12,12 @@ export class AircraftVersionCardComponent implements OnInit {
   public name: string;
 
   @Input()
-  public image: string;
+  public image: IImage;
 
   @Input()
-  public id: number;
+  public productCode: string;
 
   public imageLoaded: boolean;
-
-  @Input()
-  public aircraftVersion: IAircraftVersion;
 
   constructor() { }
 
