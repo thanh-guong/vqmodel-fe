@@ -1,5 +1,4 @@
-# base image
-FROM node
+FROM node AS compile-image
 
 # if npm install runs in root directory /, it gives error
 WORKDIR /code
@@ -8,11 +7,11 @@ WORKDIR /code
 COPY . /code
 
 RUN npm install
-RUN npm install -g @angular/cli@10.0.1
-RUN npm i angular-responsive-carousel
 
-# add `/code/node_modules/.bin` to $PATH
 ENV PATH /code/node_modules/.bin:$PATH
 
-# Inform Docker that the container is listening on the specified port at runtime.
-EXPOSE 4200
+RUN ng build
+
+FROM nginx
+# COPY docker/nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY --from=compile-image /code/dist/vqmodel /usr/share/nginx/html

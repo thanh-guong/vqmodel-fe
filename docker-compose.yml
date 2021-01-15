@@ -3,6 +3,5 @@ services:
   vqmodel-fe:
     build: .
     ports:
-      - 4222:4200
-    command: ng serve --host 0.0.0.0 --port 4200
+      - 4222:80
     restart: unless-stopped
