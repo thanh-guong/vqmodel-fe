@@ -5,7 +5,9 @@ table {
 
 .custom-container
 {
-  height: 100%;
+  margin: auto;
+  padding: 16px;
+  max-width: 1080px;
 }
 
 .clickable-text

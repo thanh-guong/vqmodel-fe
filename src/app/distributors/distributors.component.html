@@ -1,43 +1,26 @@
 <app-progress-bar *ngIf="loading"></app-progress-bar>
 
-<h1 *ngIf="!loading" class="page-title">Our retailers</h1>
+<h1 *ngIf="!loading" class="page-title">Our distributors</h1>
 
-<div *ngIf="!loading" class="custom-container">
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<div
+  *ngIf="!loading"
+  fxLayout="row wrap"
+  fxLayout.lt-sm="column"
+  fxLayoutAlign="space-evenly"
+  class="custom-container">
 
-    <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
-
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Name </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-    </ng-container>
-
-    <!-- Phone Column -->
-    <ng-container matColumnDef="phone">
-      <th mat-header-cell *matHeaderCellDef> Phone </th>
-      <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
-    </ng-container>
-
-    <!-- Country Column -->
-    <ng-container matColumnDef="country">
-      <th mat-header-cell *matHeaderCellDef> Country </th>
-      <td mat-cell *matCellDef="let element"> {{element.country}} </td>
-    </ng-container>
-
-    <!-- Web Column -->
-    <ng-container matColumnDef="web">
-      <th mat-header-cell *matHeaderCellDef> Website </th>
-      <td mat-cell *matCellDef="let element">
-        <a href="{{element.website}}" target="_blank">
-          <mat-icon>public</mat-icon>
-        </a>
-      </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
+  <ng-container *ngFor="let d of distributors">
+    <app-distributor-card
+      [name]="d.name"
+      [image]="d.image.image"
+      [website]="d.website"
+      [phone]="d.phone"
+      [address]="d.address"
+      [country]="d.country"
+      fxFlex="0 1 calc(50%)"
+      fxFlex.lt-md="0 1 calc(50%)"
+      fxFlex.lt-sm="100%">
+    </app-distributor-card>
+  </ng-container>
 
 </div>

@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
 import { environment } from '../../environments/environment';
 import { DistributorsService } from '../service/distributors/distributors.service';
 import {IDistributor} from '../service/models.interface';
@@ -11,8 +10,7 @@ import {IDistributor} from '../service/models.interface';
 })
 export class DistributorsComponent implements OnInit {
   loading: boolean;
-  displayedColumns: string[] = ['name', 'country', 'phone', 'web', ];  // This has to match with the Distributor interface
-  dataSource: MatTableDataSource<IDistributor>;
+  distributors: IDistributor[];
 
   constructor(private distributorsService: DistributorsService)
   {}
@@ -22,7 +20,7 @@ export class DistributorsComponent implements OnInit {
     this.loading = true;
     this.distributorsService.getAllDistributors().subscribe(
       data => {
-        this.dataSource = new MatTableDataSource<IDistributor>(data);
+        this.distributors = data;
         this.loading = false;
         },
       error => {

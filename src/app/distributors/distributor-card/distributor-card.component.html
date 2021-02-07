@@ -1,0 +1,20 @@
+<mat-card class="card">
+  <mat-card-header>
+    <mat-card-title>{{name}}</mat-card-title>
+    <mat-card-subtitle>{{country}}</mat-card-subtitle>
+  </mat-card-header>
+
+  <img [hidden]="!imageLoaded" mat-card-image [src]="image" alt="mat-card-image" (load)="onImageLoad();">
+  <mat-spinner *ngIf="!imageLoaded"></mat-spinner>
+
+  <mat-card-content>
+    {{address}}
+  </mat-card-content>
+
+  <mat-card-actions>
+    <a href={{website}} target="_blank">
+      <button mat-button><mat-icon>cloud_download</mat-icon> Website</button>
+    </a>
+    <button mat-button (click)="copyToClipboard()" [cdkCopyToClipboard]="phone"><mat-icon>contact_phone</mat-icon> {{phone}}</button>
+  </mat-card-actions>
+</mat-card>

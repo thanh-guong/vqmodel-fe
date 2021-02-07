@@ -57,6 +57,7 @@ export interface IDistributor
   address: string;
   phone: string;
   website: string;
+  image: IImage;
 }
 
 export interface IReview

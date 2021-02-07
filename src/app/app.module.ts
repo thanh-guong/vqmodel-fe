@@ -37,6 +37,9 @@ import { AircraftVersionCardComponent } from './aircrafts/aircraft-model-detail/
 import {IvyCarouselModule} from 'angular-responsive-carousel';
 import { AircraftModelDetailComponent } from './aircrafts/aircraft-model-detail/aircraft-model-detail.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { DistributorCardComponent } from './distributors/distributor-card/distributor-card.component';
+import { ClipboardModule } from '@angular/cdk/clipboard';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -54,30 +57,33 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     ProgressBarComponent,
     AircraftVersionCardComponent,
     AircraftModelDetailComponent,
+    DistributorCardComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    FlexLayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
-    MatCardModule,
-    MatGridListModule,
-    MatPaginatorModule,
-    MatTableModule,
-    MatInputModule,
-    FormsModule,
-    ReactiveFormsModule,
-    NgbModule,
-    HttpClientModule,
-    MatProgressBarModule,
-    IvyCarouselModule,
-    MatProgressSpinnerModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        FlexLayoutModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatSidenavModule,
+        MatIconModule,
+        MatListModule,
+        MatCardModule,
+        MatGridListModule,
+        MatPaginatorModule,
+        MatTableModule,
+        MatInputModule,
+        FormsModule,
+        ReactiveFormsModule,
+        NgbModule,
+        HttpClientModule,
+        MatProgressBarModule,
+        IvyCarouselModule,
+        MatProgressSpinnerModule,
+        ClipboardModule,
+        MatSnackBarModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
