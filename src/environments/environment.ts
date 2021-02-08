@@ -19,6 +19,7 @@ export const environment = {
   aircraftVersionRemoteRoute: 'aircraftversions',
   getAircraftModelsByClass: 'get_aircraft_models_by_class',
   getAircraftVersionsByModel: 'get_aircraft_versions_by_model',
+  contactUs: 'contactUs',
   reviewsRouteRemote: 'reviews',
   distributorsRouteRemote: 'distributors',
   solitary_mode: true,
