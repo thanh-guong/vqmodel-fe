@@ -2,81 +2,80 @@
 
 <h1 *ngIf="!loading" class="page-title">{{aircraftModel.name}}</h1>
 
-<div
-  *ngIf="!loading"
-  fxLayout="row wrap"
-  fxLayout.lt-sm="column"
-  fxLayoutAlign="space-evenly">
-  <mat-card class="card" fxFlex="0 1 calc(45%" fxFlex.lt-md="0 1 calc(45%)" fxFlex.lt-sm="100%">
-    <mat-card-title>Story</mat-card-title>
-    <mat-card-content>
-      {{aircraftModel.story}}
-    </mat-card-content>
-  </mat-card>
+<div class="custom-container">
+  <div
+    *ngIf="!loading"
+    fxLayout="row wrap"
+    fxLayout.lt-sm="column"
+    fxLayoutAlign="space-evenly">
+    <mat-card class="card" fxFlex="0 1 calc(100%" fxFlex.lt-md="0 1 calc(100%)" fxFlex.lt-sm="100%">
+      <mat-card-title>Story</mat-card-title>
+      <mat-card-content>
+        {{aircraftModel.story}}
+      </mat-card-content>
+    </mat-card>
 
-  <mat-card class="card" fxFlex="0 1 calc(45%" fxFlex.lt-md="0 1 calc(45%)" fxFlex.lt-sm="100%">
-
-    <mat-card-title>Technical details</mat-card-title>
-    <mat-card-content>
-      <ul *ngIf="!loading">
-        <li>Wingspan: {{aircraftModel.wingspan}}</li>
-        <li>Length: {{aircraftModel.length}}</li>
-        <li>Weight: {{aircraftModel.weight}}</li>
-        <li>Radio req: {{aircraftModel.radio_req}}</li>
-      </ul>
-
-      <h2>Includes:</h2>
-      <ul *ngIf="!loading">
-        <li *ngFor="let il of aircraftModel.include_list">{{il.name}}</li>
-      </ul>
-
-      <h2>Does not include:</h2>
-      <ul *ngIf="!loading">
-        <li *ngFor="let dnil of aircraftModel.does_not_include_list">{{dnil.name}}</li>
-      </ul>
-      <h2>Features:</h2>
-      <ul *ngIf="!loading">
-        <li *ngFor="let fl of aircraftModel.features_list">{{fl.name}}</li>
-      </ul>
-    </mat-card-content>
-    <mat-card-actions>
-      <a href="{{aircraftModel.manual}}" target="_blank">
-        <button mat-button><mat-icon>cloud_download</mat-icon> Manual</button>
-      </a>
-
-    </mat-card-actions>
-  </mat-card>
-</div>
-
-<h1 *ngIf="!loading" class="page-title">Photos</h1>
-
-<div
-  *ngIf="!loading"
-  fxLayout="row wrap"
-  fxLayout.lt-sm="column"
-  fxLayoutAlign="space-evenly">
-
-</div>
-
-<div
-  *ngIf="!loading"
-  fxLayout="row wrap"
-  fxLayout.lt-sm="column"
-  fxLayoutAlign="space-evenly">
-  <ng-container>
-    <mat-card *ngIf="!loading" class="card this-card" fxFlex="0 1 calc(33.3%" fxFlex.lt-md="0 1 calc(50%)" fxFlex.lt-sm="100%">
+    <mat-card *ngIf="!loading" class="card this-card" fxFlex="0 1 calc(100%" fxFlex.lt-md="0 1 calc(100%)" fxFlex.lt-sm="100%">
       <mat-card-title>BASE_VERSION_NAME | Classic</mat-card-title>
       <mat-card-subtitle>PRODUCT_CODE | NOTHING</mat-card-subtitle>
       <img [hidden]="loading" mat-card-image [src]="aircraftModel.image.image" alt="mat-card-image">
     </mat-card>
-  </ng-container>
-  <ng-container *ngFor="let a of aircraftVersions">
-    <app-aircraft-version-card
-      *ngFor="let image of a.images"
-      [image]="image"
-      [name]="a.name"
-      [productCode]="a.product_code"
-      fxFlex="0 1 calc(33.3%" fxFlex.lt-md="0 1 calc(50%)" fxFlex.lt-sm="100%">
-    </app-aircraft-version-card>
-  </ng-container>
+  </div>
+
+
+  <div
+    *ngIf="!loading"
+    fxLayout="row wrap"
+    fxLayout.lt-sm="column"
+    fxLayoutAlign="space-evenly">
+    <mat-card class="card" fxFlex="0 1 calc(100%" fxFlex.lt-md="0 1 calc(100%)" fxFlex.lt-sm="100%">
+
+      <mat-card-title>Technical details</mat-card-title>
+      <mat-card-content>
+        <ul *ngIf="!loading">
+          <li>Wingspan: {{aircraftModel.wingspan}}</li>
+          <li>Length: {{aircraftModel.length}}</li>
+          <li>Weight: {{aircraftModel.weight}}</li>
+          <li>Radio req: {{aircraftModel.radio_req}}</li>
+        </ul>
+
+        <h2>Includes:</h2>
+        <ul *ngIf="!loading">
+          <li *ngFor="let il of aircraftModel.include_list">{{il.name}}</li>
+        </ul>
+
+        <h2>Does not include:</h2>
+        <ul *ngIf="!loading">
+          <li *ngFor="let dnil of aircraftModel.does_not_include_list">{{dnil.name}}</li>
+        </ul>
+        <h2>Features:</h2>
+        <ul *ngIf="!loading">
+          <li *ngFor="let fl of aircraftModel.features_list">{{fl.name}}</li>
+        </ul>
+      </mat-card-content>
+      <mat-card-actions>
+        <a href="{{aircraftModel.manual}}" target="_blank">
+          <button mat-button><mat-icon>cloud_download</mat-icon> Manual</button>
+        </a>
+
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <h1 *ngIf="!loading" class="page-title">Photos</h1>
+  <div
+    *ngIf="!loading"
+    fxLayout="row wrap"
+    fxLayout.lt-sm="column"
+    fxLayoutAlign="space-evenly">
+    <ng-container *ngFor="let a of aircraftVersions">
+      <app-aircraft-version-card
+        *ngFor="let image of a.images"
+        [image]="image"
+        [name]="a.name"
+        [productCode]="a.product_code"
+        fxFlex="0 1 calc(50%" fxFlex.lt-md="0 1 calc(50%)" fxFlex.lt-sm="100%">
+      </app-aircraft-version-card>
+    </ng-container>
+  </div>
 </div>
