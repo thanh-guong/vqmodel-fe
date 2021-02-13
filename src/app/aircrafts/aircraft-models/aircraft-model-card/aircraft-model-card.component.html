@@ -1,5 +1,4 @@
 <mat-card class="card">
-  <a routerLink={{getAircraftModelPath()}}>
     <mat-card-header>
       <mat-card-title>{{name}}</mat-card-title>
     </mat-card-header>
@@ -7,5 +6,9 @@
     <img [hidden]="!imageLoaded" mat-card-image [src]="image" alt="mat-card-image" (load)="onImageLoad();">
     <mat-spinner *ngIf="!imageLoaded"></mat-spinner>
 
-  </a>
+  <mat-card-actions>
+    <a [routerLink]="getAircraftModelPath()">
+      <button mat-button><mat-icon>visibility</mat-icon> View more</button>
+    </a>
+  </mat-card-actions>
 </mat-card>
