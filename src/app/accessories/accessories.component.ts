@@ -1,9 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Crumb} from '../breadcrumbs/breadcrumbs.component';
 import {IAircraftAccessory} from '../service/models.interface';
-import {environment} from "../../environments/environment";
-import {AircraftService} from "../service/aircraft/aircraft.service";
-import {AccessoriesService} from "../service/accessories/accessories.service";
+import {environment} from '../../environments/environment';
+import {AccessoriesService} from '../service/accessories/accessories.service';
 
 @Component({
   selector: 'app-accessories',

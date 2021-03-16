@@ -19,7 +19,7 @@ export class AccessoryCardComponent implements OnInit {
   productCode: string;
 
   @Input()
-  model: IAircraftModel;
+  modelId: number;
 
   constructor() { }
 
@@ -28,6 +28,6 @@ export class AccessoryCardComponent implements OnInit {
 
   getAircraftModelPath(): string
   {
-    return environment.aircraftModelsRoute + '/' + this.model.id;
+    return '/' + environment.aircraftModelsRoute + '/' + this.modelId;
   }
 }
