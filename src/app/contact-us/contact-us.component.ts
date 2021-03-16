@@ -47,7 +47,7 @@ export class ContactUsComponent
   {
     this.error = false;
 
-    this.contactUsService.postEmail('contact-us', this.message.value.email, this.email.value).subscribe(
+    this.contactUsService.postEmail('contact-us', this.message.value, this.email.value).subscribe(
       data => {
         this.openErrorSnackBar('Email sent', '');
       },
