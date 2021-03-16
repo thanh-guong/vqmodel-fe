@@ -1,6 +1,5 @@
-<ng-container>
-  <div *ngFor="let c of crumbs; last as isLast;">
-    <a href="{{c.url}}">{{c.name}}</a>
-    <mat-icon *ngIf="!isLast">arrow_right</mat-icon>
-  </div>
+<ng-container >
+    <a mat-button color="primary" class="custom-button" href="{{c.url}}" *ngFor="let c of crumbs; last as isLast;">
+      {{c.name}}<mat-icon *ngIf="!isLast">arrow_right</mat-icon>
+    </a>
 </ng-container>
