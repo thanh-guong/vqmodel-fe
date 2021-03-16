@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  accessories: 'accessories',
   aircraftRoute: 'aircraft-classes',
   aircraftModelsRoute: 'aircraft-models',
   aircraftModelDetailRoute: 'aircraft-model-detail',
@@ -14,6 +15,7 @@ export const environment = {
   remoteHost: 'falcao5.ddns.net',
   remotePort: '5294',
   remoteApiPrefix: 'api',
+  aircraftAccessoriesRemote: 'aircraftmodelaccessories',
   aircraftClassRemoteRoute: 'aircraftclasses',
   aircraftModelRemoteRoute: 'aircraftmodels',
   aircraftVersionRemoteRoute: 'aircraftversions',
@@ -23,6 +25,7 @@ export const environment = {
   reviewsRouteRemote: 'reviews',
   distributorsRouteRemote: 'distributors',
   solitary_mode: true,
+
 };
 
 /*

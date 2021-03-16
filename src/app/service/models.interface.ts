@@ -4,6 +4,14 @@ export interface IImage
   image: string;
 }
 
+export interface IAircraftAccessory
+{
+  id: number;
+  name: string;
+  model: number;
+  product_code: string;
+}
+
 export interface IAircraftClass
 {
   id: number;

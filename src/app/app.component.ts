@@ -19,6 +19,13 @@ export class AppComponent
       route: environment.aircraftRoute,
     };
 
+  public accessories =
+    {
+      name: 'Accessories',
+      icon: 'build',
+      route: environment.accessories,
+    };
+
   public reviews =
     {
       name: 'Reviews',

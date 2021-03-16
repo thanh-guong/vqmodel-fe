@@ -41,6 +41,8 @@ import { DistributorCardComponent } from './distributors/distributor-card/distri
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
+import { AccessoriesComponent } from './accessories/accessories.component';
+import { AccessoryCardComponent } from './accessories/accessory-card/accessory-card.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +62,8 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
     AircraftModelDetailComponent,
     DistributorCardComponent,
     BreadcrumbsComponent,
+    AccessoriesComponent,
+    AccessoryCardComponent,
   ],
     imports: [
         BrowserModule,

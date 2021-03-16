@@ -8,8 +8,10 @@ import {ContactUsComponent} from './contact-us/contact-us.component';
 import {AircraftClassesComponent} from './aircrafts/aircraft-classes/aircraft-classes.component';
 import {AircraftModelsComponent} from './aircrafts/aircraft-models/aircraft-models.component';
 import {AircraftModelDetailComponent} from './aircrafts/aircraft-model-detail/aircraft-model-detail.component';
+import {AccessoriesComponent} from './accessories/accessories.component';
 
 const routes: Routes = [
+  {path: environment.accessories, component: AccessoriesComponent},
   {path: environment.aircraftRoute, component: AircraftClassesComponent},
   {path: environment.aircraftModelsRoute + '/:aircraftClassId', component: AircraftModelsComponent},
   {path: environment.aircraftModelDetailRoute + '/:aircraftModelId', component: AircraftModelDetailComponent},

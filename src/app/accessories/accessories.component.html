@@ -1,0 +1,24 @@
+<app-progress-bar *ngIf="loading"></app-progress-bar>
+<app-breadcrumbs fxLayout="row wrap"
+                 fxLayout.lt-sm="row"
+                 [crumbs]="breadcrumbs"></app-breadcrumbs>
+
+<h1 class="page-title">Accessories</h1>
+
+<p class="page-description">Desc TODO.</p>
+
+<div
+  *ngIf="!loading"
+  fxLayout="row wrap"
+  fxLayout.lt-sm="column"
+  fxLayoutAlign="space-evenly"
+  class="custom-container"
+>
+  <ng-container *ngFor="let a of accessories">
+    <app-accessory-card [id]="a.id" [name]="a.name" [model]="a.model" [productCode]="a.product_code"
+                             fxFlex="1 1 calc(50%"
+                             fxFlex.lt-md="1 1 calc(50%)"
+                             fxFlex.lt-sm="100%">
+    </app-accessory-card>
+  </ng-container>
+</div>
