@@ -40,6 +40,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { DistributorCardComponent } from './distributors/distributor-card/distributor-card.component';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     AircraftVersionCardComponent,
     AircraftModelDetailComponent,
     DistributorCardComponent,
+    BreadcrumbsComponent,
   ],
     imports: [
         BrowserModule,

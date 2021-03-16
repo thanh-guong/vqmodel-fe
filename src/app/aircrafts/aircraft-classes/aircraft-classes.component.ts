@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { IAircraftClass } from '../../service/models.interface';
 import { AircraftService } from '../../service/aircraft/aircraft.service';
+import {Crumb} from '../../breadcrumbs/breadcrumbs.component';
 
 @Component({
   selector: 'app-aircraft-classes',
@@ -13,6 +14,8 @@ export class AircraftClassesComponent implements OnInit {
   loading: boolean;
 
   aircraftClasses: IAircraftClass[];
+
+  breadcrumbs: Crumb[] = [{ order: 0, name: 'Aircraft Classes', url: environment.aircraftRoute}];
 
   constructor(private aircraftService: AircraftService)
   {

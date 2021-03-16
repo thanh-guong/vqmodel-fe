@@ -36,6 +36,7 @@ export interface IAircraftModel
   weight: number;
   length: number;
   radio_req: string;
+  aircraft_class: IAircraftClass;
   engines: string;
   manual: string;
   image: IImage;

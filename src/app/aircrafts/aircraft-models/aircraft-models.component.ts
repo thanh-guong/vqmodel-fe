@@ -3,6 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {environment} from '../../../environments/environment';
 import {IAircraftModel} from '../../service/models.interface';
 import {AircraftService} from '../../service/aircraft/aircraft.service';
+import {Crumb} from "../../breadcrumbs/breadcrumbs.component";
 
 @Component({
   selector: 'app-aircraft-models',
@@ -18,6 +19,8 @@ export class AircraftModelsComponent implements OnInit {
   aircraftModels: IAircraftModel[];
 
   aircraftClassName: string;
+
+  breadcrumbs: Crumb[];
 
   constructor(private aircraftService: AircraftService, private activatedRoute: ActivatedRoute)
   {
@@ -48,6 +51,8 @@ export class AircraftModelsComponent implements OnInit {
       data => {
         this.aircraftModels = data;
         this.loading = false;
+
+        this.setBreadCrumbs();
       },
     error => {
         if (!environment.production)
@@ -58,6 +63,14 @@ export class AircraftModelsComponent implements OnInit {
         this.loading = false;
       }
     );
+  }
+
+  setBreadCrumbs(): void
+  {
+    this.breadcrumbs = [
+      { order: 0, name: 'Aircraft Classes', url: environment.aircraftRoute },
+      { order: 1, name: this.aircraftClassName, url: environment.aircraftModelsRoute + '/' +  this.aircraftClassId}
+    ];
   }
 
 }

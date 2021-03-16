@@ -1,5 +1,9 @@
 <app-progress-bar *ngIf="loading"></app-progress-bar>
 
+<app-breadcrumbs fxLayout="row wrap"
+                 fxLayout.lt-sm="row"
+                 [crumbs]="breadcrumbs"></app-breadcrumbs>
+
 <h1 *ngIf="!loading" class="page-title">{{aircraftClassName}} models</h1>
 
 <p class="page-description">Below the list of the aircraft models belonging to the {{aircraftClassName}} class.</p>
