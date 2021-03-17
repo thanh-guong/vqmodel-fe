@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import {ContactUsService} from '../service/contact-us/contact-us.service';
-import {environment} from "../../environments/environment";
-import {MatSnackBar} from "@angular/material/snack-bar";
+import {environment} from '../../environments/environment';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import {HttpErrorResponse} from '@angular/common/http';
 
 @Component({
   selector: 'app-contact-us',
@@ -12,6 +13,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 export class ContactUsComponent
 {
   error = false;
+  loading = false;
 
   email = new FormControl('', [
     Validators.required,
@@ -46,15 +48,26 @@ export class ContactUsComponent
   public submitForm(): void
   {
     this.error = false;
+    this.loading = true;
 
     this.contactUsService.postEmail('contact-us', this.message.value, this.email.value).subscribe(
       data => {
+        this.loading = false;
         this.openErrorSnackBar('Email sent', '');
       },
-      error => {
+      (error: HttpErrorResponse) => {
         if (!environment.production)
         {
+          this.loading = false;
           this.error = true;
+
+          if (error.status === +429)
+          {
+            // {"detail": "Request was throttled. Expected available in 57 seconds."}
+            const m = 'Available in ' + error.error.detail.substring(45, error.message.length - 3);
+            this.openErrorSnackBar(m, '');
+            return;
+          }
           this.openErrorSnackBar('Error', '');
         }
       }
