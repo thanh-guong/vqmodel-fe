@@ -11,9 +11,6 @@ import {AccessoriesService} from '../service/accessories/accessories.service';
 })
 export class AccessoriesComponent implements OnInit {
 
-  @Input()
-  breadcrumbs: Crumb[];
-
   loading: boolean;
 
   accessories: IAircraftAccessory[];

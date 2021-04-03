@@ -1,11 +1,8 @@
 <app-progress-bar *ngIf="loading"></app-progress-bar>
-<app-breadcrumbs fxLayout="row wrap"
-                 fxLayout.lt-sm="row"
-                 [crumbs]="breadcrumbs"></app-breadcrumbs>
 
 <h1 class="page-title">Accessories</h1>
 
-<p class="page-description">Desc TODO.</p>
+<p class="page-description">Below are listed all the accessories for our aircrafts.</p>
 
 <div
   *ngIf="!loading"
@@ -15,7 +12,7 @@
   class="custom-container"
 >
   <ng-container *ngFor="let a of accessories">
-    <app-accessory-card [id]="a.id" [name]="a.name" [modelId]="a.model" [productCode]="a.product_code"
+    <app-accessory-card [id]="a.id" [name]="a.name" [modelId]="a.model" [productCode]="a.product_code" [image]="a.image"
                              fxFlex="1 1 calc(50%"
                              fxFlex.lt-md="1 1 calc(50%)"
                              fxFlex.lt-sm="100%">

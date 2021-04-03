@@ -1,9 +1,15 @@
 <mat-card class="card">
   <mat-card-header>
     <mat-card-title>{{name}}</mat-card-title>
+    <mat-card-subtitle>{{productCode}}</mat-card-subtitle>
   </mat-card-header>
 
+  <img [hidden]="!imageLoaded" mat-card-image [src]="image.image" alt="mat-card-image" (load)="onImageLoad();">
+
+  <mat-spinner *ngIf="!imageLoaded"></mat-spinner>
+
   <mat-card-content>
+    Available for {{aircraftModelName}} (you can see it by clicking the button below).
   </mat-card-content>
 
   <mat-card-actions>

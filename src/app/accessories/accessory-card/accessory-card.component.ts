@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {IAircraftModel} from '../../service/models.interface';
-import {environment} from "../../../environments/environment";
+import {IAircraftModel, IImage} from '../../service/models.interface';
+import {environment} from '../../../environments/environment';
+import {AircraftService} from "../../service/aircraft/aircraft.service";
 
 @Component({
   selector: 'app-accessory-card',
@@ -21,13 +22,30 @@ export class AccessoryCardComponent implements OnInit {
   @Input()
   modelId: number;
 
-  constructor() { }
+  @Input()
+  image: IImage;
+
+  aircraftModelName: string;
+
+  public imageLoaded: boolean;
+
+  constructor(private aircraftService: AircraftService) { }
 
   ngOnInit(): void {
+    this.aircraftService.getAircraftModelById(this.modelId).subscribe(
+      data => {
+        this.aircraftModelName = data.name;
+      }
+    );
   }
 
   getAircraftModelPath(): string
   {
-    return '/' + environment.aircraftModelsRoute + '/' + this.modelId;
+    return '/' + environment.aircraftModelDetailRoute + '/' + this.modelId;
+  }
+
+  onImageLoad(): void
+  {
+    this.imageLoaded = true;
   }
 }

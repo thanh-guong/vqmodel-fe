@@ -10,6 +10,7 @@ export interface IAircraftAccessory
   name: string;
   model: number;
   product_code: string;
+  image: IImage;
 }
 
 export interface IAircraftClass
