@@ -1,0 +1,12 @@
+.custom-container
+{
+  margin: auto;
+  padding: 16px;
+  max-width: 1080px;
+}
+
+.header-image {
+  background-image: url('../../assets/images/marte_valerio_falcone_avatar.png');
+  background-size: cover;
+}
+

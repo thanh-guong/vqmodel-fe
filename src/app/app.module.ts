@@ -43,6 +43,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { AccessoriesComponent } from './accessories/accessories.component';
 import { AccessoryCardComponent } from './accessories/accessory-card/accessory-card.component';
+import { FooterComponent } from './footer/footer.component';
+import { WhoMadeThisWebsiteComponent } from './who-made-this-website/who-made-this-website.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +66,8 @@ import { AccessoryCardComponent } from './accessories/accessory-card/accessory-c
     BreadcrumbsComponent,
     AccessoriesComponent,
     AccessoryCardComponent,
+    FooterComponent,
+    WhoMadeThisWebsiteComponent,
   ],
     imports: [
         BrowserModule,

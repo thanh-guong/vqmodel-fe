@@ -12,6 +12,7 @@ export const environment = {
   reviewsRoute: 'reviews',
   distributorsRoute: 'distributors',
   contactUsRoute: 'contact-us',
+  whoMadeThisWebsiteRoute: 'who-made-this-website',
   // remoteHost: 'falcao5.ddns.net',
   remoteHost: 'localhost',
   // remotePort: '5294',
@@ -27,7 +28,6 @@ export const environment = {
   reviewsRouteRemote: 'reviews',
   distributorsRouteRemote: 'distributors',
   solitary_mode: true,
-
 };
 
 /*
