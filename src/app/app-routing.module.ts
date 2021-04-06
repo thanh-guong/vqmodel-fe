@@ -10,6 +10,7 @@ import {AircraftModelsComponent} from './aircrafts/aircraft-models/aircraft-mode
 import {AircraftModelDetailComponent} from './aircrafts/aircraft-model-detail/aircraft-model-detail.component';
 import {AccessoriesComponent} from './accessories/accessories.component';
 import {WhoMadeThisWebsiteComponent} from './who-made-this-website/who-made-this-website.component';
+import {ThanhGuongComponent} from './thanh-guong/thanh-guong.component';
 
 const routes: Routes = [
   {path: environment.accessories, component: AccessoriesComponent},
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path: environment.distributorsRoute, component: DistributorsComponent},
   {path: environment.contactUsRoute, component: ContactUsComponent},
   {path: environment.whoMadeThisWebsiteRoute, component: WhoMadeThisWebsiteComponent},
+  {path: environment.thanhGuongRoute, component: ThanhGuongComponent},
 ];
 
 @NgModule({

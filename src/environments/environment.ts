@@ -13,6 +13,7 @@ export const environment = {
   distributorsRoute: 'distributors',
   contactUsRoute: 'contact-us',
   whoMadeThisWebsiteRoute: 'who-made-this-website',
+  thanhGuongRoute: 'thanh-guong',
   // remoteHost: 'falcao5.ddns.net',
   remoteHost: 'localhost',
   // remotePort: '5294',

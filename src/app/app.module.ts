@@ -45,6 +45,7 @@ import { AccessoriesComponent } from './accessories/accessories.component';
 import { AccessoryCardComponent } from './accessories/accessory-card/accessory-card.component';
 import { FooterComponent } from './footer/footer.component';
 import { WhoMadeThisWebsiteComponent } from './who-made-this-website/who-made-this-website.component';
+import { ThanhGuongComponent } from './thanh-guong/thanh-guong.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import { WhoMadeThisWebsiteComponent } from './who-made-this-website/who-made-th
     AccessoryCardComponent,
     FooterComponent,
     WhoMadeThisWebsiteComponent,
+    ThanhGuongComponent,
   ],
     imports: [
         BrowserModule,
