@@ -11,8 +11,10 @@ import {AircraftModelDetailComponent} from './aircrafts/aircraft-model-detail/ai
 import {AccessoriesComponent} from './accessories/accessories.component';
 import {WhoMadeThisWebsiteComponent} from './who-made-this-website/who-made-this-website.component';
 import {ThanhGuongComponent} from './thanh-guong/thanh-guong.component';
+import {HomeComponent} from './home/home.component';
 
 const routes: Routes = [
+  {path: '', component: HomeComponent},
   {path: environment.accessories, component: AccessoriesComponent},
   {path: environment.aircraftRoute, component: AircraftClassesComponent},
   {path: environment.aircraftModelsRoute + '/:aircraftClassId', component: AircraftModelsComponent},
@@ -22,6 +24,7 @@ const routes: Routes = [
   {path: environment.contactUsRoute, component: ContactUsComponent},
   {path: environment.whoMadeThisWebsiteRoute, component: WhoMadeThisWebsiteComponent},
   {path: environment.thanhGuongRoute, component: ThanhGuongComponent},
+  {path: '**', redirectTo: '/'},  // redirect non existing paths to home
 ];
 
 @NgModule({
