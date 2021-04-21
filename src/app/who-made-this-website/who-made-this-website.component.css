@@ -3,6 +3,7 @@
   margin: auto;
   padding: 16px;
   max-width: 1080px;
+  min-height: 82%;
 }
 
 .header-image {

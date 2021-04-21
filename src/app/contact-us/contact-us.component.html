@@ -1,45 +1,49 @@
 <app-progress-bar *ngIf="loading"></app-progress-bar>
 
-<h1 class="page-title">Contact us</h1>
+<div class="footer-spacer">
 
-<p class="page-description">If you have any sort of question, you have a particular need, or you want to collaborate with us, don't hesitate contacting us. You can contact us by compiling the form below and hitting the button send.</p>
+  <h1 class="page-title">Contact us</h1>
 
-<div class="custom-container">
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>Send us an e-mail</mat-card-title>
-    </mat-card-header>
+  <p class="page-description">If you have any sort of question, you have a particular need, or you want to collaborate with us, don't hesitate contacting us. You can contact us by compiling the form below and hitting the button send.</p>
 
-    <mat-card-content>
-      <form (ngSubmit)="submitForm()" class="custom-form">
+  <div class="custom-container">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Send us an e-mail</mat-card-title>
+      </mat-card-header>
 
-        <mat-form-field class="form-field">
-          <mat-label>Your email</mat-label>
-          <input matInput [formControl]="email" placeholder="Ex. thanh.guong@vqmodel.com">
+      <mat-card-content>
+        <form (ngSubmit)="submitForm()" class="custom-form">
 
-          <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
-            Please enter a valid email address
-          </mat-error>
+          <mat-form-field class="form-field">
+            <mat-label>Your email</mat-label>
+            <input matInput [formControl]="email" placeholder="Ex. thanh.guong@vqmodel.com">
 
-          <mat-error *ngIf="email.hasError('required')">
-            Email is <strong>required</strong>
-          </mat-error>
-        </mat-form-field>
+            <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
+              Please enter a valid email address
+            </mat-error>
 
-        <mat-form-field class="form-field">
-          <mat-label>Write here your question</mat-label>
-          <textarea
-            matInput
-            mat-autosize
-            matAutosizeMinRows="20"
-            [formControl]="message"
-            placeholder="Ex. I have a question about the model..."
-          ></textarea>
-        </mat-form-field>
+            <mat-error *ngIf="email.hasError('required')">
+              Email is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
 
-        <!-- [disabled]="!" -->
-        <button type="submit" mat-button><mat-icon>email</mat-icon> Send</button>
-      </form>
-    </mat-card-content>
-  </mat-card>
+          <mat-form-field class="form-field">
+            <mat-label>Write here your question</mat-label>
+            <textarea
+              matInput
+              mat-autosize
+              matAutosizeMinRows="20"
+              [formControl]="message"
+              placeholder="Ex. I have a question about the model..."
+            ></textarea>
+          </mat-form-field>
+
+          <!-- [disabled]="!" -->
+          <button type="submit" mat-button><mat-icon>email</mat-icon> Send</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
 </div>

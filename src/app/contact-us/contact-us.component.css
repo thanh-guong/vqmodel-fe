@@ -16,3 +16,8 @@
   margin-bottom: 1%;
   width: 100%;
 }
+
+.footer-spacer
+{
+  min-height: 82%;
+}
