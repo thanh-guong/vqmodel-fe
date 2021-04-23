@@ -23,10 +23,9 @@
 
     <mat-card *ngIf="!loading" class="card this-card" fxFlex="0 1 calc(100%" fxFlex.lt-md="0 1 calc(100%)" fxFlex.lt-sm="100%">
       <mat-card-title>Classic version</mat-card-title>
-      <img [hidden]="loading" mat-card-image [src]="aircraftModel.image.image" alt="mat-card-image">
+      <img loading="lazy" mat-card-image [src]="aircraftModel.image.image" alt="mat-card-image">
     </mat-card>
   </div>
-
 
   <div
     *ngIf="!loading"

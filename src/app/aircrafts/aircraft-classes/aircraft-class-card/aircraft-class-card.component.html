@@ -2,7 +2,7 @@
   <mat-card-header>
     <mat-card-title>{{name}}</mat-card-title>
   </mat-card-header>
-  <img [hidden]="!imageLoaded" mat-card-image [src]="image" alt="mat-card-image" (load)="onImageLoad();">
+  <img loading="lazy" mat-card-image [src]="image" alt="mat-card-image" (load)="onImageLoad();">
 
   <mat-spinner *ngIf="!imageLoaded"></mat-spinner>
 
