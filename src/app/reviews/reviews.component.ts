@@ -10,10 +10,10 @@ import { ReviewsService } from '../service/reviews/reviews.service';
 })
 export class ReviewsComponent implements OnInit {
 
-  loading: boolean;
-  error: boolean;
+  loading: boolean = false;
+  error: boolean = false;
 
-  reviews: IReview[];
+  reviews: IReview[] = [];
 
   constructor(private reviewsService: ReviewsService)
   {

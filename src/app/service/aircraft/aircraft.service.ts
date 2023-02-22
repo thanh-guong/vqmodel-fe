@@ -32,10 +32,11 @@ export class AircraftService extends SuperService
   {
     if (!environment.production && environment.solitary_mode)
     {
+      console.log("SOLITARY_MODE");
       return SOLITARY_TEST_AIRCRAFT_CLASS;
     }
 
-    return null;
+    return [];
   }
 
   public getAllAircraftClasses(): Observable<IAircraftClass[]>

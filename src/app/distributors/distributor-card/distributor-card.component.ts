@@ -9,27 +9,27 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class DistributorCardComponent implements OnInit {
 
   @Input()
-  public name: string;
+  public name: string = "";
 
   @Input()
-  public image: string;
+  public image: string = "";
 
   @Input()
-  public website: string;
+  public website: string = "";
 
   @Input()
-  public phone: string;
+  public phone: string = "";
 
   @Input()
-  public address: string;
+  public address: string = "";
 
   @Input()
-  public country: string;
+  public country: string = "";
 
   @Output()
   public copiedToClipboard = new EventEmitter<boolean>();
 
-  public imageLoaded: boolean;
+  public imageLoaded: boolean = false;
 
   constructor(private snackBar: MatSnackBar) { }
 

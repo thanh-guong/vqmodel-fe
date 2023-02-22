@@ -9,15 +9,15 @@ import {environment} from '../../../../environments/environment';
 export class AircraftClassCardComponent implements OnInit {
 
   @Input()
-  public name: string;
+  public name: string = "";
 
   @Input()
-  public image: string;
+  public image: string = "";
 
   @Input()
-  public id: number;
+  public id: number = -1;
 
-  public imageLoaded: boolean;
+  public imageLoaded: boolean = false;
 
   constructor() { }
 

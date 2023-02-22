@@ -11,9 +11,9 @@ import {Crumb} from '../../breadcrumbs/breadcrumbs.component';
 })
 export class AircraftClassesComponent implements OnInit {
 
-  loading: boolean;
+  loading: boolean = false;
 
-  aircraftClasses: IAircraftClass[];
+  aircraftClasses: IAircraftClass[] = [];
 
   breadcrumbs: Crumb[] = [{ order: 0, name: 'Aircraft Classes', url: environment.aircraftRoute}];
 
@@ -25,6 +25,11 @@ export class AircraftClassesComponent implements OnInit {
   ngOnInit(): void
   {
     this.loading = true;
+
+    if (!environment.production && environment.solitary_mode) {
+      this.aircraftClasses = this.aircraftService.getAircraftClasses();
+      this.loading = false;
+    }
 
     this.aircraftService.getAllAircraftClasses().subscribe(
       data => {

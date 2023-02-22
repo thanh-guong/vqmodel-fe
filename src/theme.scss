@@ -1,23 +1,26 @@
-@import '~@angular/material/theming';
-@include mat-core();
+@use '@angular/material' as mat;
+
+@include mat.core();
 
 /********** Light theme **********/
 
-$primary: mat-palette($mat-blue, 700);
-$accent: mat-palette($mat-blue, 100);
-$warn:    mat-palette($mat-red);
+/*
+$primary: mat.define-palette(mat.$blue-palette, 700);
+$accent: mat.define-palette(mat.$blue-palette, 100);
+$warn:    mat.define-palette(mat.$red-palette);
 
-$light-theme: mat-light-theme($primary, $accent, $warn);
+$light-theme: mat.define-light-theme($primary, $accent, $warn);
 
 @include angular-material-theme($light-theme);
+*/
 
 /********** Dark theme **********/
 
-$dark-primary: mat-palette($mat-blue-grey);
-$dark-accent:  mat-palette($mat-grey);
-$dark-warn:    mat-palette($mat-deep-orange);
+$dark-primary: mat.define-palette(mat.$blue-grey-palette);
+$dark-accent:  mat.define-palette(mat.$grey-palette);
+$dark-warn:    mat.define-palette(mat.$deep-orange-palette);
 
-$dark-theme:   mat-dark-theme((
+$dark-theme:   mat.define-dark-theme((
   color: (
     primary: $dark-primary,
     accent: $dark-accent,
@@ -25,5 +28,5 @@ $dark-theme:   mat-dark-theme((
   )
 ));
 
-@include angular-material-color($dark-theme);
+@include mat.all-component-themes($dark-theme);
 

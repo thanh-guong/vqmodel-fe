@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -26,7 +25,6 @@ import {MatInputModule} from '@angular/material/input';
 import {ReactiveFormsModule} from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AircraftClassesComponent } from './aircrafts/aircraft-classes/aircraft-classes.component';
 import { AircraftClassCardComponent } from './aircrafts/aircraft-classes/aircraft-class-card/aircraft-class-card.component';
 import { AircraftModelsComponent } from './aircrafts/aircraft-models/aircraft-models.component';
@@ -34,7 +32,6 @@ import { AircraftModelCardComponent } from './aircrafts/aircraft-models/aircraft
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { AircraftVersionCardComponent } from './aircrafts/aircraft-model-detail/aircraft-version-card/aircraft-version-card.component';
-import {IvyCarouselModule} from 'angular-responsive-carousel';
 import { AircraftModelDetailComponent } from './aircrafts/aircraft-model-detail/aircraft-model-detail.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { DistributorCardComponent } from './distributors/distributor-card/distributor-card.component';
@@ -75,7 +72,6 @@ import { ThanhGuongComponent } from './thanh-guong/thanh-guong.component';
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
-        FlexLayoutModule,
         MatToolbarModule,
         MatButtonModule,
         MatSidenavModule,
@@ -88,10 +84,8 @@ import { ThanhGuongComponent } from './thanh-guong/thanh-guong.component';
         MatInputModule,
         FormsModule,
         ReactiveFormsModule,
-        NgbModule,
         HttpClientModule,
         MatProgressBarModule,
-        IvyCarouselModule,
         MatProgressSpinnerModule,
         ClipboardModule,
         MatSnackBarModule,

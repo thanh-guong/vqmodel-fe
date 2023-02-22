@@ -12,17 +12,17 @@ import {Crumb} from '../../breadcrumbs/breadcrumbs.component';
 })
 export class AircraftModelDetailComponent implements OnInit {
 
-  loading: boolean;
+  loading: boolean = false;
 
-  aircraftModelId: number;
+  aircraftModelId: number = -1;
 
-  public aircraftVersions: IAircraftVersion[];
+  public aircraftVersions: IAircraftVersion[] = [];
 
-  public aircraftModel: IAircraftModel;
+  public aircraftModel!: IAircraftModel;
 
   public aircraftModelName = 'AircraftModelName';
 
-  breadcrumbs: Crumb[];
+  breadcrumbs: Crumb[] = [];
 
   constructor(private aircraftService: AircraftService, private activatedRoute: ActivatedRoute) { }
 
@@ -31,6 +31,7 @@ export class AircraftModelDetailComponent implements OnInit {
     this.loading = true;
 
     this.activatedRoute.paramMap.subscribe(params => {
+      // @ts-ignore
       this.aircraftModelId = +params.get('aircraftModelId');
     });
 

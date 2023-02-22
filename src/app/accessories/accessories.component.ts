@@ -11,9 +11,9 @@ import {AccessoriesService} from '../service/accessories/accessories.service';
 })
 export class AccessoriesComponent implements OnInit {
 
-  loading: boolean;
+  loading: boolean = false;
 
-  accessories: IAircraftAccessory[];
+  accessories: IAircraftAccessory[] = [];
 
   constructor(private accessoriesService: AccessoriesService) { }
 

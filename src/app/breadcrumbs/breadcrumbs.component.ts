@@ -15,7 +15,7 @@ export interface Crumb
 export class BreadcrumbsComponent implements OnInit {
 
   @Input()
-  crumbs: Crumb[];
+  crumbs: Crumb[] = [];
 
   isLast = false;
 

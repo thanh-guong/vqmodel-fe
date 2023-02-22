@@ -8,15 +8,15 @@ import {Component, Input, OnInit} from '@angular/core';
 export class ReviewCardComponent implements OnInit {
 
   @Input()
-  public name: string;
+  public name: string = "";
 
   @Input()
-  public image: string;
+  public image: string = "";
 
   @Input()
-  public download: string;
+  public download: string = "";
 
-  public imageLoaded: boolean;
+  public imageLoaded: boolean = false;
 
   constructor() { }
 

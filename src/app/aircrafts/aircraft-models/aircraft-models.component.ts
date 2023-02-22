@@ -12,15 +12,15 @@ import {Crumb} from "../../breadcrumbs/breadcrumbs.component";
 })
 export class AircraftModelsComponent implements OnInit {
 
-  loading: boolean;
+  loading: boolean = false;
 
-  aircraftClassId: number;
+  aircraftClassId: number = -1;
 
-  aircraftModels: IAircraftModel[];
+  aircraftModels: IAircraftModel[] = [];
 
-  aircraftClassName: string;
+  aircraftClassName: string = "";
 
-  breadcrumbs: Crumb[];
+  breadcrumbs: Crumb[] = [];
 
   constructor(private aircraftService: AircraftService, private activatedRoute: ActivatedRoute)
   {
@@ -31,6 +31,7 @@ export class AircraftModelsComponent implements OnInit {
     this.loading = true;
 
     this.activatedRoute.paramMap.subscribe(params => {
+      // @ts-ignore
       this.aircraftClassId = +params.get('aircraftClassId');
     });
 

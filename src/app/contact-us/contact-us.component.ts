@@ -50,7 +50,10 @@ export class ContactUsComponent
     this.error = false;
     this.loading = true;
 
-    this.contactUsService.postEmail('contact-us', this.message.value, this.email.value).subscribe(
+    let messageValue: string = this.message.value === null ? this.message.toString() : "";
+    let emailValue: string = this.email.value === null ? this.message.toString() : "";
+
+    this.contactUsService.postEmail('contact-us', messageValue, emailValue).subscribe(
       data => {
         this.loading = false;
         this.openErrorSnackBar('Email sent', '');

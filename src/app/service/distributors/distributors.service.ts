@@ -206,7 +206,7 @@ export class DistributorsService  extends SuperService
       return SOLITARY_TEST_DISTRIBUTOR;
     }
 
-    return null;
+    return [];
   }
 
   public getAllDistributors(): Observable<IDistributor[]>

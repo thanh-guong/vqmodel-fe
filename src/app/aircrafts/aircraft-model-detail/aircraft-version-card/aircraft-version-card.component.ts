@@ -9,15 +9,15 @@ import {IAircraftVersion, IImage} from '../../../service/models.interface';
 export class AircraftVersionCardComponent implements OnInit {
 
   @Input()
-  public name: string;
+  public name: string = "";
 
   @Input()
-  public image: IImage;
+  public image!: IImage;
 
   @Input()
-  public productCode: string;
+  public productCode: string = "";
 
-  public imageLoaded: boolean;
+  public imageLoaded: boolean = false;
 
   constructor() { }
 

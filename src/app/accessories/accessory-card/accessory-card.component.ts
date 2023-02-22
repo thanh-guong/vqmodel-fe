@@ -11,23 +11,23 @@ import {AircraftService} from "../../service/aircraft/aircraft.service";
 export class AccessoryCardComponent implements OnInit {
 
   @Input()
-  id: number;
+  id: number = -1;
 
   @Input()
-  name: string;
+  name: string = "";
 
   @Input()
-  productCode: string;
+  productCode: string = "";
 
   @Input()
-  modelId: number;
+  modelId: number = -1;
 
   @Input()
-  image: IImage;
+  image!: IImage;
 
-  aircraftModelName: string;
+  aircraftModelName: string = "";
 
-  public imageLoaded: boolean;
+  public imageLoaded: boolean = false;
 
   constructor(private aircraftService: AircraftService) { }
 

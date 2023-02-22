@@ -9,8 +9,8 @@ import {IDistributor} from '../service/models.interface';
   styleUrls: ['./distributors.component.css']
 })
 export class DistributorsComponent implements OnInit {
-  loading: boolean;
-  distributors: IDistributor[];
+  loading: boolean = false;
+  distributors: IDistributor[] = [];
 
   constructor(private distributorsService: DistributorsService)
   {}
